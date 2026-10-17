@@ -183,34 +183,34 @@ const slides = [
 </div>
 
 <script>
-  let currentSlide = 0;
-  const totalSlides = 4;
+  function setupCarousel() {
+    let currentSlide = 0;
+    const totalSlides = 4;
 
-  const track = document.getElementById('carousel-track');
-  const counter = document.getElementById('carousel-current');
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
+    const track = document.getElementById('carousel-track');
+    const counter = document.getElementById('carousel-current');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
 
-  function updateCarousel() {
-    if (track) {
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    function updateCarousel() {
+      if (track) {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      if (counter) {
+        counter.textContent = (currentSlide + 1).toString();
+      }
     }
-    if (counter) {
-      counter.textContent = (currentSlide + 1).toString();
-    }
-  }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
+    prevBtn?.addEventListener('click', () => {
       currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
       updateCarousel();
     });
-  }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
+    nextBtn?.addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % totalSlides;
       updateCarousel();
     });
   }
+
+  document.addEventListener('astro:page-load', setupCarousel);
 </script>
