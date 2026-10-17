@@ -23,43 +23,29 @@ const formatDate = (date: Date) => {
 >
   <Header current="writing" />
 
-  <main class="space-y-10">
-    <div class="space-y-2">
+  <main class="space-y-8">
+    <div class="space-y-2 pb-2 border-b border-neutral-100 dark:border-neutral-900">
       <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-        Writing & Thoughts
+        Writing
       </h1>
-      <p class="text-sm text-neutral-600 dark:text-neutral-400">
-        Essays on non-human identity security, autonomous AI agents, 0-to-1 product development, and building minimalist software.
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        Essays on identity security, autonomous AI agents, and building unbloated software.
       </p>
     </div>
 
-    <div class="divide-y divide-neutral-200 dark:divide-neutral-800">
+    <!-- Clean, minimal list: just title and date -->
+    <div class="space-y-4">
       {posts.map((post) => (
-        <article class="py-6 first:pt-2 group">
-          <a href={`/writing/${post.id}`} class="block space-y-2">
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-              <h2 class="text-lg font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                {post.data.title}
-              </h2>
-              <span class="text-xs font-mono text-neutral-400 shrink-0">
-                {formatDate(post.data.pubDate)}
-              </span>
-            </div>
-            
-            <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-              {post.data.description}
-            </p>
-
-            {post.data.tags && post.data.tags.length > 0 && (
-              <div class="flex flex-wrap gap-1.5 pt-1">
-                {post.data.tags.map((tag) => (
-                  <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            )}
+        <article class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 group py-1">
+          <a 
+            href={`/writing/${post.id}`} 
+            class="text-sm font-medium text-neutral-800 dark:text-neutral-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors underline decoration-neutral-200 dark:decoration-neutral-800 group-hover:decoration-blue-500"
+          >
+            {post.data.title}
           </a>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">
+            {formatDate(post.data.pubDate)}
+          </span>
         </article>
       ))}
     </div>

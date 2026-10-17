@@ -11,11 +11,24 @@ import Footer from '../components/Footer.astro';
   <Header current="about" />
 
   <main class="space-y-12">
-    <!-- Bio Intro -->
-    <div class="space-y-3">
-      <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-        About Me
-      </h1>
+    <!-- Bio Intro with Download Resume Button -->
+    <div class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-neutral-100 dark:border-neutral-900">
+        <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+          About Me
+        </h1>
+
+        <a 
+          href="/resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 text-xs font-medium hover:opacity-90 transition-opacity shrink-0 w-fit"
+        >
+          <span>Download Full Resume (PDF)</span>
+          <span>↗</span>
+        </a>
+      </div>
+
       <p class="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
         I am a Staff Product Manager and two-time former founder with over 8 years of experience building products across enterprise security, agentic AI, developer platforms, and high-growth consumer technology.
       </p>
@@ -54,9 +67,10 @@ import Footer from '../components/Footer.astro';
           href="/resume.pdf" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="text-xs font-mono text-neutral-900 dark:text-neutral-100 hover:text-blue-600 dark:hover:text-blue-400 underline decoration-neutral-300 dark:decoration-neutral-700 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 text-xs font-medium hover:opacity-90 transition-opacity shrink-0 w-fit"
         >
-          Full Resume (PDF) ↗
+          <span>Download Full Resume (PDF)</span>
+          <span>↗</span>
         </a>
       </div>
 
