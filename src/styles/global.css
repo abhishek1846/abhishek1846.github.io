@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -34,7 +36,6 @@
 html {
   min-width: 360px;
   scrollbar-gutter: stable;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -50,12 +51,6 @@ body {
 h1, h2, h3, h4 {
   text-wrap: balance;
   letter-spacing: -0.025em;
-}
-
-/* Subtle, smooth content transition */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 0.15s;
 }
 
 /* Typography styles for essays / markdown articles */

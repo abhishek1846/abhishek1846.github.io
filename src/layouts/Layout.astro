@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -14,7 +13,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,18 +27,19 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
 
-    <!-- Astro Smooth Client Router for instantaneous tab changes -->
-    <ClientRouter />
-
-    <!-- Dark Mode FOUC fix -->
+    <!-- Instant Theme Setter (Zero FOUC) -->
     <script is:inline>
-      const applyTheme = () => {
-        const theme = localStorage.getItem('theme') || 
-          (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
-      };
-      applyTheme();
-      document.addEventListener('astro:after-swap', applyTheme);
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
     </script>
   </head>
   <body class="min-h-screen flex flex-col justify-between selection:bg-neutral-900 selection:text-white dark:selection:bg-neutral-100 dark:selection:text-black">
@@ -48,11 +48,12 @@ const {
     </div>
 
     <script is:inline>
-      window.toggleTheme = () => {
-        const isDark = document.documentElement.classList.contains('dark');
-        const nextTheme = isDark ? 'light' : 'dark';
-        document.documentElement.classList.toggle('dark', !isDark);
-        localStorage.setItem('theme', nextTheme);
+      window.toggleTheme = function() {
+        const root = document.documentElement;
+        const isDark = root.classList.toggle('dark');
+        try {
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        } catch (e) {}
       };
 
       // Background keyboard shortcuts (1: Home, 2: Writing, 3: Work, 4: Projects, 5: Books, 6: Uses, 7: About)
