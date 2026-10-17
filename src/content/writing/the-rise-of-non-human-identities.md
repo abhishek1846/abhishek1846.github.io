@@ -9,7 +9,7 @@ In traditional cybersecurity, the primary identity perimeter was simple: employe
 
 Today, that perimeter has completely collapsed.
 
-In any modern enterprise environment, **Non-Human Identities (NHIs)**—API keys, service principals, OAuth tokens, GitHub Actions runners, automation webhooks, and now autonomous AI agents—outnumber human identities by an estimated **45 to 1**.
+In any modern enterprise environment, **Non-Human Identities (NHIs)** - API keys, service principals, OAuth tokens, GitHub Actions runners, automation webhooks, and now autonomous AI agents - outnumber human identities by an estimated **45 to 1**.
 
 Yet while human identities are strictly policed, non-human identities are frequently left unmanaged, unmonitored, and unowned.
 

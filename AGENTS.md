@@ -20,3 +20,10 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## Writing & Style Guidelines
+
+- Never use emdash (—) or endash (–). Always use a standard hyphen (-).
+- Never write long sentences with too many commas. Keep sentences clean and easy to follow.
+- Never use 3-word phrase triplets or cliché copywriting triads.
+- Write naturally like a human.
