@@ -7,7 +7,7 @@ draft: true
 
 Playing angry is deceptively hard in comedy. Most actors rely on volume. They shout their lines, wave their arms around, and hope the noise passes for humor.
 
-Glenn Howerton approaches rage like a classical musician.
+Glenn Howerton approaches anger with incredible precision.
 
 His character, Dennis Reynolds, is a sociopath convinced of his own perfection. What makes Howerton's performance unforgettable is not the screaming. It is the buildup before the scream.
 
@@ -27,4 +27,4 @@ And when the dam finally breaks, the timing is immaculate:
 
 "I have contained my rage for as long as possible, but I shall unleash my fury upon you like the crashing of a thousand waves! Begone, vile man, begone from me! A starter car? This car is a finisher car! A transporter of gods! The golden god! I am untethered and my rage knows no bounds!"
 
-Howerton studied drama at Juilliard, and you can feel it in every syllable. He delivers absolute lunacy with the cadence of Shakespearean tragedy. It is hilarious because the anger is played with total, deadly conviction.
+Howerton trained at Juilliard, and that vocal discipline shows. He delivers completely unhinged lines with total seriousness. It is hilarious because there is no winking at the camera. Dennis takes himself dead seriously, and that conviction is what makes the meltdown so funny.
