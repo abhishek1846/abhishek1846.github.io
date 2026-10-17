@@ -42,11 +42,11 @@ const formatDate = (date: Date) => {
       <PhotoCarousel />
     </section>
 
-    <!-- Work Highlights Snapshot (Brief highlights only, linking to full resume) -->
+    <!-- Experience & Background (Current role & Founder experience emphasized, zero timelines) -->
     <section class="space-y-4">
       <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
         <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
-          Where I've Worked
+          Work & Founder Experience
         </h2>
         <a 
           href="/resume.pdf" 
@@ -58,53 +58,50 @@ const formatDate = (date: Date) => {
         </a>
       </div>
 
-      <div class="space-y-3 text-sm">
-        <div class="flex items-baseline justify-between">
-          <div>
-            <span class="font-medium text-neutral-900 dark:text-neutral-100">Oleria</span>
-            <span class="text-neutral-500 text-xs"> — Staff Product Manager (NHI & AI Governance)</span>
+      <div class="space-y-4 text-sm">
+        <!-- Current -->
+        <div class="space-y-1">
+          <div class="flex items-baseline justify-between">
+            <span class="font-semibold text-neutral-900 dark:text-neutral-100">
+              Oleria <span class="font-normal text-xs text-neutral-500 font-mono">— Staff Product Manager</span>
+            </span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900/40 font-medium">Current</span>
           </div>
-          <span class="text-xs font-mono text-neutral-400 shrink-0">2025 — Present</span>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Leading product across ~30 engineers for Non-Human Identity (NHI) and autonomous AI Agent Governance. Scaled integration catalog from 20 to 100+ connected applications.
+          </p>
         </div>
 
-        <div class="flex items-baseline justify-between">
-          <div>
-            <span class="font-medium text-neutral-900 dark:text-neutral-100">Kloudfuse</span>
-            <span class="text-neutral-500 text-xs"> — Product & Growth Lead, India (Observability)</span>
+        <!-- Founder Stints -->
+        <div class="space-y-1 pt-2 border-t border-neutral-100 dark:border-neutral-900">
+          <div class="flex items-baseline justify-between">
+            <span class="font-semibold text-neutral-900 dark:text-neutral-100">
+              Komma <span class="font-normal text-xs text-neutral-500 font-mono">— Co-Founder & CEO</span>
+            </span>
+            <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">Acquired</span>
           </div>
-          <span class="text-xs font-mono text-neutral-400 shrink-0">2024 — 2025</span>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Built collaborative analytics notebooks for data teams. Interviewed 150+ data leaders, closed 6 enterprise PoCs, raised Pre-Seed round. Acquired by Series A fintech.
+          </p>
         </div>
 
-        <div class="flex items-baseline justify-between">
-          <div>
-            <span class="font-medium text-neutral-900 dark:text-neutral-100">Komma</span>
-            <span class="text-neutral-500 text-xs"> — Co-Founder & CEO (Acquired by Series A fintech)</span>
+        <div class="space-y-1">
+          <div class="flex items-baseline justify-between">
+            <span class="font-semibold text-neutral-900 dark:text-neutral-100">
+              Dashh <span class="font-normal text-xs text-neutral-500 font-mono">— Co-Founder</span>
+            </span>
           </div>
-          <span class="text-xs font-mono text-neutral-400 shrink-0">2022 — 2024</span>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Built 1-click checkout engine for e-commerce brands in 2.5 months with 2 engineers; live on 10 brands, received 2 acquihire offers.
+          </p>
         </div>
 
-        <div class="flex items-baseline justify-between">
-          <div>
-            <span class="font-medium text-neutral-900 dark:text-neutral-100">Dashh</span>
-            <span class="text-neutral-500 text-xs"> — Co-Founder (1-click checkout)</span>
-          </div>
-          <span class="text-xs font-mono text-neutral-400 shrink-0">2021 — 2022</span>
-        </div>
-
-        <div class="flex items-baseline justify-between">
-          <div>
-            <span class="font-medium text-neutral-900 dark:text-neutral-100">PharmEasy</span>
-            <span class="text-neutral-500 text-xs"> — Senior Product Manager (Docon, 1M+ Rx/mo)</span>
-          </div>
-          <span class="text-xs font-mono text-neutral-400 shrink-0">2018 — 2021</span>
-        </div>
-
-        <div class="flex items-baseline justify-between">
-          <div>
-            <span class="font-medium text-neutral-900 dark:text-neutral-100">ZS Associates</span>
-            <span class="text-neutral-500 text-xs"> — Decision Analytics Associate</span>
-          </div>
-          <span class="text-xs font-mono text-neutral-400 shrink-0">2017 — 2018</span>
+        <!-- Previous Involvements (No timelines) -->
+        <div class="pt-3 border-t border-neutral-100 dark:border-neutral-900 space-y-1.5">
+          <p class="text-xs font-mono text-neutral-400">Other past involvements:</p>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Previously opened India presence and GTM at <span class="font-medium text-neutral-900 dark:text-neutral-200">Kloudfuse</span> (onboarding 1mg, Innovacer, GE Health); owned digital prescription products at <span class="font-medium text-neutral-900 dark:text-neutral-200">PharmEasy</span> (Docon, 1M+ Rx/month); started career in decision analytics at <span class="font-medium text-neutral-900 dark:text-neutral-200">ZS Associates</span>.
+          </p>
         </div>
       </div>
     </section>

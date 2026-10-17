@@ -2,65 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-const roles = [
-  {
-    company: "Oleria",
-    role: "Staff Product Manager",
-    period: "2025 — Present",
-    url: "https://oleria.com",
-    highlight: "Leading product for Non-Human Identity (NHI) and AI Agent Governance across 30+ engineers. Scaled integrations from 20 to 100+ apps and drove $3M in new enterprise PoCs.",
-  },
-  {
-    company: "Kloudfuse",
-    role: "Product & Growth Lead, India",
-    period: "2024 — 2025",
-    url: "https://kloudfuse.com",
-    highlight: "Opened the India market for enterprise observability; onboarded 1mg, Innovacer, and GE Health. Led Real User Monitoring (RUM) launch.",
-  },
-  {
-    company: "Komma",
-    role: "Co-Founder & CEO",
-    period: "2022 — 2024",
-    tag: "Acquired",
-    highlight: "Collaborative analytics notebooks for data teams. Conducted 150+ data leader interviews, closed 6 PoCs, raised Pre-Seed round. Acquired by Series A fintech in March 2024.",
-  },
-  {
-    company: "Dashh",
-    role: "Co-Founder",
-    period: "2021 — 2022",
-    highlight: "Built 1-click checkout platform for e-commerce in 2.5 months with 2 engineers; live on 10 brands, received 2 acquihire offers.",
-  },
-  {
-    company: "PharmEasy",
-    role: "Senior Product Manager",
-    period: "2018 — 2021",
-    url: "https://pharmeasy.in",
-    highlight: "Owned product for Docon digital prescriptions (~1M Rx/month). Built doctor-facing analytics and pharmaceutical data dashboards.",
-  },
-  {
-    company: "ZS Associates",
-    role: "Decision Analytics Associate",
-    period: "2017 — 2018",
-    highlight: "Decision analytics for US Fortune 500 clients. Selected for Priority Industries division and cohort training lead.",
-  },
-];
 ---
 
 <Layout 
   title="Work | Abhishek Singh"
-  description="Career highlights and resume of Abhishek Singh."
+  description="Product leadership, founder stints, and engineering background of Abhishek Singh."
 >
   <Header current="work" />
 
-  <main class="space-y-10">
+  <main class="space-y-12">
+    <!-- Header -->
     <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 pb-2 border-b border-neutral-100 dark:border-neutral-900">
       <div>
         <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-          Work Highlights
+          Work & Experience
         </h1>
         <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-          Brief summary of roles. For detailed metrics and squad history, view the full PDF.
+          Product leadership, 0-to-1 startup craft, and technical platform execution.
         </p>
       </div>
 
@@ -70,36 +28,120 @@ const roles = [
         rel="noopener noreferrer"
         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 text-xs font-medium hover:opacity-90 transition-opacity shrink-0 w-fit"
       >
-        <span>Download Full Resume (PDF)</span>
+        <span>Full Resume (PDF)</span>
         <span>↗</span>
       </a>
     </div>
 
-    <!-- Clean, non-duplicative work highlights -->
-    <div class="divide-y divide-neutral-100 dark:divide-neutral-900">
-      {roles.map((item) => (
-        <div class="py-5 first:pt-0 space-y-1.5">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-            <h2 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
-              <span>{item.company}</span>
-              <span class="text-xs text-neutral-400 font-normal font-mono">— {item.role}</span>
-              {item.tag && (
-                <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                  {item.tag}
-                </span>
-              )}
-              {item.url && (
-                <a href={item.url} target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">↗</a>
-              )}
-            </h2>
-            <span class="text-xs font-mono text-neutral-400 shrink-0">{item.period}</span>
+    <!-- Section 1: Current Leadership Role -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-2">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Current Focus
+        </h2>
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+      </div>
+
+      <div class="p-6 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/30 space-y-3">
+        <div class="flex items-baseline justify-between">
+          <h3 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
+            <span>Oleria</span>
+            <span class="text-xs font-normal text-neutral-400 font-mono">— Staff Product Manager</span>
+            <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-black dark:hover:text-white transition-colors">↗</a>
+          </h3>
+        </div>
+
+        <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          Leading product across ~30 engineers for <span class="font-medium text-neutral-900 dark:text-white">Non-Human Identity (NHI) and autonomous AI Agent Governance</span>. Shaping how Fortune 500 enterprises discover, map, and govern autonomous agents (Gemini Enterprise, Salesforce Agentforce, AWS Bedrock) and machine credentials.
+        </p>
+
+        <ul class="text-xs text-neutral-600 dark:text-neutral-400 space-y-1.5 list-disc pl-4 leading-relaxed">
+          <li>Drove $3M in net-new enterprise PoCs by repositioning product conversations around autonomous agent and NHI governance.</li>
+          <li>Scaled Oleria's integration catalog from 20 to 100+ connected applications.</li>
+          <li>Led development of Workflow Studio and Integration Studio, enabling self-serve customer automation.</li>
+          <li>Shaped the Oleria MCP (Model Context Protocol) AI experience for querying context graphs on enterprise data.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 2: Founder Experience -->
+    <section class="space-y-4">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-100 dark:border-neutral-900 pb-2">
+        Founder Stints
+      </h2>
+
+      <div class="space-y-6">
+        <!-- Komma -->
+        <div class="space-y-2">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
+              <span>Komma</span>
+              <span class="text-xs text-neutral-400 font-normal font-mono">— Co-Founder & CEO</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                Acquired
+              </span>
+            </h3>
           </div>
           <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            {item.highlight}
+            Built collaborative analytics notebooks for modern data teams. Conducted 150+ user interviews with data leaders from companies like Twilio, United Airlines, and Athelas. Closed 6 enterprise PoC customers, raised a Pre-Seed / Angel round, and led the team through acquisition by a Series A fintech.
           </p>
         </div>
-      ))}
-    </div>
+
+        <!-- Dashh -->
+        <div class="space-y-2">
+          <div class="flex items-baseline justify-between">
+            <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 flex items-center gap-2">
+              <span>Dashh</span>
+              <span class="text-xs text-neutral-400 font-normal font-mono">— Co-Founder</span>
+            </h3>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Built a 1-click checkout solution for e-commerce merchants in 2.5 months with 2 engineers. Onboarded 10 brands, optimized UX and conversion performance, and received 2 acquihire offers before deciding to build independently.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Other Involvements (No Timelines) -->
+    <section class="space-y-4">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-100 dark:border-neutral-900 pb-2">
+        Other Past Involvements
+      </h2>
+
+      <div class="space-y-4 text-sm">
+        <div class="space-y-1">
+          <div class="flex items-baseline gap-2">
+            <span class="font-semibold text-neutral-900 dark:text-neutral-100">Kloudfuse</span>
+            <span class="text-xs text-neutral-400 font-mono">— Product & Growth Lead, India</span>
+            <a href="https://kloudfuse.com" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-black dark:hover:text-white transition-colors">↗</a>
+          </div>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Opened India presence for unified enterprise observability; onboarded marquee customers including 1mg, Innovacer, and GE Health, and led the launch of Real User Monitoring (RUM).
+          </p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="flex items-baseline gap-2">
+            <span class="font-semibold text-neutral-900 dark:text-neutral-100">PharmEasy</span>
+            <span class="text-xs text-neutral-400 font-mono">— Senior Product Manager</span>
+            <a href="https://pharmeasy.in" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-black dark:hover:text-white transition-colors">↗</a>
+          </div>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Owned product for Docon digital prescriptions (~1M prescriptions/month), leading doctor-facing analytics and pharmaceutical enterprise data dashboards.
+          </p>
+        </div>
+
+        <div class="space-y-1">
+          <div class="flex items-baseline gap-2">
+            <span class="font-semibold text-neutral-900 dark:text-neutral-100">ZS Associates</span>
+            <span class="text-xs text-neutral-400 font-mono">— Decision Analytics Associate</span>
+          </div>
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            Worked with US Fortune 500 enterprise clients on decision analytics, commercial market strategy, and data modeling.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
