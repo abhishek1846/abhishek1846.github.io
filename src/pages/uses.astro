@@ -46,38 +46,53 @@ const categories = [
     items: [
       {
         name: "Gatsby",
+        url: "/projects",
         description: "My native macOS e-book manager built with Rust & Tauri. Clean, lightning fast, and zero bloat.",
       },
       {
         name: "Zed",
+        url: "https://zed.dev",
         description: "High-performance, lightweight code editor written in Rust. Fast startup and minimal UI.",
       },
       {
         name: "Nota (nota.md)",
+        url: "https://nota.md",
         description: "Paid once years ago. They don't update it anymore, but it remains an amazing distraction-free Markdown app.",
       },
       {
         name: "Ghostty",
+        url: "https://ghostty.org",
         description: "Native, GPU-accelerated terminal emulator for daily command-line workflows.",
       },
       {
         name: "Raycast",
+        url: "https://raycast.com",
         description: "Fast keyboard launcher replacing Spotlight for shortcuts, window snapping, and workflow automation.",
       },
       {
         name: "Maccy",
+        url: "https://maccy.app",
         description: "Superfast, lightweight native macOS clipboard manager with keyboard navigation.",
       },
       {
         name: "Rocket",
+        url: "https://matthewpalmer.net/rocket/",
         description: "Slack-style emoji picker everywhere on macOS with colon-completion (:rocket:). Bought it once, couldn't live without it.",
       },
       {
         name: "Firefox & Safari",
+        links: [
+          { name: "Firefox", url: "https://www.mozilla.org/firefox/" },
+          { name: "Safari", url: "https://www.apple.com/safari/" },
+        ],
         description: "Firefox as my primary everyday browser; Safari as my fast secondary browser.",
       },
       {
         name: "Apple Music & YouTube Music",
+        links: [
+          { name: "Apple Music", url: "https://music.apple.com" },
+          { name: "YouTube Music", url: "https://music.youtube.com" },
+        ],
         description: "Apple Music is my primary sanctuary for curated listening. YouTube Music is strictly for off-beat and casual listening so as to never corrupt my Apple Music algorithm.",
       },
     ],
@@ -109,11 +124,42 @@ const categories = [
           </h2>
 
           <div class="grid grid-cols-1 gap-4">
-            {cat.items.map((item) => (
+            {cat.items.map((item: any) => (
               <div class="p-4 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/30">
-                <h3 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-                  {item.name}
-                </h3>
+                <div class="flex items-center justify-between gap-2">
+                  <h3 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+                    {item.url ? (
+                      <a 
+                        href={item.url} 
+                        target={item.url.startsWith('http') ? '_blank' : undefined} 
+                        rel={item.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        class="hover:underline underline-offset-2 inline-flex items-center gap-1 group"
+                      >
+                        <span>{item.name}</span>
+                        <span class="text-xs text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 font-normal">
+                          {item.url.startsWith('http') ? '↗' : '→'}
+                        </span>
+                      </a>
+                    ) : (
+                      <span>{item.name}</span>
+                    )}
+                  </h3>
+
+                  {item.links && (
+                    <div class="flex items-center gap-3 text-xs">
+                      {item.links.map((link: { name: string; url: string }) => (
+                        <a 
+                          href={link.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 underline underline-offset-2"
+                        >
+                          {link.name} ↗
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1 leading-relaxed">
                   {item.description}
                 </p>
