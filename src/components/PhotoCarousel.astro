@@ -6,8 +6,9 @@ const slides = [
     title: "Identity Security in the AI Era",
     subtitle: "Co-authored with DSCI (Data Security Council of India)",
     date: "2026",
-    linkText: "Read publication details in About →",
-    href: "/about#dsci-paper",
+    linkText: "Read paper on DSCI ↗",
+    href: "https://www.dsci.in/resource/content/identity-security-maturity-ai-era",
+    image: "/images/dsci-paper-thumb.webp",
     type: "paper",
   },
   {
@@ -82,17 +83,33 @@ const slides = [
     <div id="carousel-track" class="flex transition-transform duration-300 ease-out">
       {slides.map((slide) => (
         <div class="w-full shrink-0 p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
-          <!-- Visual Placeholder Card -->
+          <!-- Visual Card -->
           <div class="w-full sm:w-48 h-36 shrink-0 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 flex flex-col justify-between p-3.5 shadow-xs relative">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
-                {slide.tag}
-              </span>
-              <span class="text-[10px] font-mono text-neutral-400">{slide.date}</span>
-            </div>
+            {slide.image ? (
+              <div class="absolute inset-0 flex items-center justify-center bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
+                <img 
+                  src={slide.image} 
+                  alt={slide.title} 
+                  class="w-full h-full object-cover" 
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-2 left-2 right-2 flex items-center justify-between text-white text-[10px] font-mono">
+                  <span class="bg-black/60 px-1.5 py-0.5 rounded backdrop-blur-xs">{slide.tag}</span>
+                  <span class="bg-black/60 px-1.5 py-0.5 rounded backdrop-blur-xs">{slide.date}</span>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
+                    {slide.tag}
+                  </span>
+                  <span class="text-[10px] font-mono text-neutral-400">{slide.date}</span>
+                </div>
 
-            <!-- Graphic / Mock Icon per slide type -->
-            <div class="my-auto py-2">
+                <!-- Graphic / Mock Icon per slide type -->
+                <div class="my-auto py-2">
               {slide.type === 'paper' && (
                 <div class="space-y-1">
                   <div class="w-6 h-6 rounded bg-blue-50 dark:bg-blue-950 flex items-center justify-center text-blue-600 dark:text-blue-400">
@@ -124,14 +141,15 @@ const slides = [
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <p class="text-[11px] font-bold text-neutral-900 dark:text-neutral-100 leading-tight">Security Meetup</p>
                   <p class="text-[9px] text-neutral-500 font-mono">Tech Demo & Panel</p>
                 </div>
               )}
             </div>
 
             <p class="text-[9px] font-mono text-neutral-400 truncate">Abhishek Singh</p>
-          </div>
+          </>
+        )}
+      </div>
 
           <!-- Slide Content & Link to About Section -->
           <div class="flex-1 space-y-2 text-left">
