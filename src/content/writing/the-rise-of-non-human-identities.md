@@ -1,6 +1,6 @@
 ---
 title: "The Exploding Perimeter: Why Non-Human Identities (NHIs) are Enterprise Security's Blind Spot"
-description: "In the age of autonomous AI agents, microservices, and API integrations, non-human identities outnumber humans 45-to-1. Here is how governance is catching up."
+description: "In the age of autonomous AI agents, microservices, and API integrations, non-human identities outnumber humans 90-to-1. Here is how governance is catching up."
 pubDate: 2026-09-28
 tags: ["Identity Security", "AI Agents", "NHI", "Enterprise SaaS", "Staff PM"]
 ---
@@ -9,7 +9,7 @@ In traditional cybersecurity, the primary identity perimeter was simple: employe
 
 Today, that perimeter has completely collapsed.
 
-In any modern enterprise environment, **Non-Human Identities (NHIs)** - API keys, service principals, OAuth tokens, GitHub Actions runners, automation webhooks, and now autonomous AI agents - outnumber human identities by an estimated **45 to 1**.
+In any modern enterprise environment, **Non-Human Identities (NHIs)** - API keys, service principals, OAuth tokens, GitHub Actions runners, automation webhooks, and now autonomous AI agents - outnumber human identities by an estimated **90 to 1**.
 
 Yet while human identities are strictly policed, non-human identities are frequently left unmanaged, unmonitored, and unowned.
 

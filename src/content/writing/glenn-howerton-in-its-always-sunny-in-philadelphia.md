@@ -27,4 +27,4 @@ And when the dam finally breaks, the timing is immaculate:
 
 "I have contained my rage for as long as possible, but I shall unleash my fury upon you like the crashing of a thousand waves! Begone, vile man, begone from me! A starter car? This car is a finisher car! A transporter of gods! The golden god! I am untethered and my rage knows no bounds!"
 
-Howerton trained at Juilliard, and that vocal discipline shows. He delivers completely unhinged lines with total seriousness. It is hilarious because there is no winking at the camera. Dennis takes himself dead seriously, and that conviction is what makes the meltdown so funny.
+Howerton trained at Juilliard, and that vocal discipline shows. He delivers completely unhinged lines with total seriousness. Dennis takes himself dead seriously, and that conviction is what makes the meltdown so funny.
