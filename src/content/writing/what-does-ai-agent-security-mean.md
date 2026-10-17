@@ -2,7 +2,6 @@
 title: "What does AI agent security mean?"
 description: "Why real agent security has very little to do with sci-fi and everything to do with permissions."
 pubDate: 2026-10-18T08:00:00.000Z
-draft: true
 ---
 
 Most conversations about AI security sound like science fiction. People debate whether models will become self-aware, escape containment, or refuse human commands.

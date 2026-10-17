@@ -2,7 +2,6 @@
 title: "Why it's always sunny in philadelphia is genuinely smart"
 description: "Why a sitcom about terrible people yelling in a bar is actually a masterclass in satire."
 pubDate: 2026-10-18T06:00:00.000Z
-draft: true
 ---
 
 If you only watch five minutes of *It's Always Sunny in Philadelphia*, you might write it off as loud, crude comedy. It looks like five awful people yelling over each other in an abandoned Irish pub.

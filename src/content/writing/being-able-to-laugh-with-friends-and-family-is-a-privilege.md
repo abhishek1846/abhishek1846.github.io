@@ -2,7 +2,6 @@
 title: "Being able to laugh with friends/family is a privilege"
 description: "Why the freedom to be completely silly with the people you love is so deeply satisfying."
 pubDate: 2026-10-18T07:00:00.000Z
-draft: true
 ---
 
 Most of adult life asks you to be a serious person.

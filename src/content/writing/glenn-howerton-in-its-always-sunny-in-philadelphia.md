@@ -2,7 +2,6 @@
 title: "Glenn Howerton in it's always sunny in philadelphia - might have the best comedic timing when getting angry"
 description: "Why Dennis Reynolds' controlled descent into rage is an absolute masterclass in comic acting."
 pubDate: 2026-10-18T05:00:00.000Z
-draft: true
 ---
 
 Playing angry is deceptively hard in comedy. Most actors rely on volume. They shout their lines, wave their arms around, and hope the noise passes for humor.

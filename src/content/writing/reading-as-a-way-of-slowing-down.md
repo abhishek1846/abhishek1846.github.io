@@ -2,7 +2,6 @@
 title: "Reading as a way of slowing down"
 description: "Why reading books is the best antidote to algorithmic acceleration."
 pubDate: 2026-10-18T10:00:00.000Z
-draft: true
 ---
 
 Almost everything built in the last fifteen years is designed to speed you up. 

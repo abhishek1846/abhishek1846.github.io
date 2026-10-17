@@ -2,7 +2,6 @@
 title: "I'm always in awe when I sit in an plane"
 description: "Why flying thirty-five thousand feet in the air will never stop feeling magical to me."
 pubDate: 2026-10-18T04:00:00.000Z
-draft: true
 ---
 
 Every time I board an airplane, I look at the people around me. 

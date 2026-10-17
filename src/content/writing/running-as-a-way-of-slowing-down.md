@@ -2,7 +2,6 @@
 title: "Running as a way of slowing down"
 description: "Why locking your attention onto pace and distance is the best form of meditation."
 pubDate: 2026-10-18T09:00:00.000Z
-draft: true
 ---
 
 During a normal workday, your mind moves in frantic zigzags. 
