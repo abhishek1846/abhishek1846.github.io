@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -27,24 +28,26 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
 
+    <!-- Astro Smooth Client Router for instantaneous tab changes -->
+    <ClientRouter />
+
     <!-- Dark Mode FOUC fix -->
     <script is:inline>
-      const getThemePreference = () => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
-        }
-        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      const applyTheme = () => {
+        const theme = localStorage.getItem('theme') || 
+          (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
       };
-      const isDark = getThemePreference() === 'dark';
-      document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+      applyTheme();
+      document.addEventListener('astro:after-swap', applyTheme);
     </script>
   </head>
   <body class="min-h-screen flex flex-col justify-between selection:bg-neutral-900 selection:text-white dark:selection:bg-neutral-100 dark:selection:text-black">
-    <div class="max-w-[60ch] mx-auto px-5 w-full flex-1 pt-6 sm:pt-8 pb-16">
+    <div class="max-w-3xl mx-auto px-6 sm:px-8 w-full flex-1 pt-8 pb-20">
       <slot />
     </div>
 
-    <script>
+    <script is:inline>
       window.toggleTheme = () => {
         const isDark = document.documentElement.classList.contains('dark');
         const nextTheme = isDark ? 'light' : 'dark';
@@ -52,12 +55,12 @@ const {
         localStorage.setItem('theme', nextTheme);
       };
 
-      // Tab keyboard shortcuts (1: Home, 2: Writing, 3: Work, 4: Projects, 5: Books, 6: Uses, 7: About)
+      // Background keyboard shortcuts (1: Home, 2: Writing, 3: Work, 4: Projects, 5: Books, 6: Uses, 7: About)
       document.addEventListener('keydown', (e) => {
-        if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
+        if (['INPUT', 'TEXTAREA'].includes(e.target?.tagName)) return;
         if (e.metaKey || e.ctrlKey || e.altKey) return;
 
-        const routes: Record<string, string> = {
+        const routes = {
           '1': '/',
           '2': '/writing',
           '3': '/work',

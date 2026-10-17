@@ -5,87 +5,64 @@ interface Props {
 
 const { current = '' } = Astro.props;
 
-const tabs = [
-  { name: 'home', href: '/', key: '1' },
-  { name: 'writing', href: '/writing', key: '2' },
-  { name: 'work', href: '/work', key: '3' },
-  { name: 'projects', href: '/projects', key: '4' },
-  { name: 'books', href: '/books', key: '5' },
-  { name: 'uses', href: '/uses', key: '6' },
-  { name: 'about', href: '/about', key: '7' },
+const navLinks = [
+  { name: 'writing', href: '/writing' },
+  { name: 'work', href: '/work' },
+  { name: 'projects', href: '/projects' },
+  { name: 'books', href: '/books' },
+  { name: 'uses', href: '/uses' },
+  { name: 'about', href: '/about' },
 ];
-
-const nameLetters = 'Abhishek Singh'.split('');
-const handleLetters = 'abhishek1846'.split('');
 ---
 
-<header class="sticky top-0 z-50 bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-sm pt-4 pb-3 mb-10 border-b border-gray-100 dark:border-neutral-900 transition-colors">
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-    <!-- Animated Name / Handle with staggered letter roll effect -->
-    <a href="/" class="text-sm font-medium tracking-tight text-neutral-900 dark:text-neutral-100 flex items-center group relative overflow-hidden h-5">
-      <span class="sr-only">Abhishek Singh</span>
-      <span aria-hidden="true" class="block relative">
-        <span class="inline-block transition-transform duration-300 ease-in-out group-hover:-translate-y-full whitespace-nowrap">
-          {nameLetters.map((letter, index) => (
-            <span
-              class="inline-block transition-transform duration-200"
-              style={`transition-delay: ${index * 20}ms`}
-            >
-              {letter === ' ' ? '\u00A0' : letter}
-            </span>
-          ))}
-        </span>
-        <span class="inline-block absolute left-0 top-0 transition-transform duration-300 ease-in-out translate-y-full group-hover:translate-y-0 whitespace-nowrap text-blue-600 dark:text-blue-400 font-mono text-xs">
-          {handleLetters.map((letter, index) => (
-            <span
-              class="inline-block transition-transform duration-200"
-              style={`transition-delay: ${index * 20}ms`}
-            >
-              {letter}
-            </span>
-          ))}
-        </span>
-      </span>
+<header class="pt-2 pb-8 mb-12 border-b border-neutral-100 dark:border-neutral-900 transition-colors">
+  <div class="flex items-center justify-between">
+    <!-- Clean, static, tasteful name -->
+    <a 
+      href="/" 
+      class={`text-base font-medium tracking-tight transition-colors ${
+        current === 'home' || current === ''
+          ? 'text-neutral-900 dark:text-neutral-100'
+          : 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'
+      }`}
+    >
+      Abhishek Singh
     </a>
 
-    <!-- Minimal persistent tabs -->
-    <div class="flex items-center justify-between sm:justify-end gap-1 overflow-x-auto no-scrollbar">
-      <nav class="flex items-center gap-1 sm:gap-1.5 text-xs">
-        {tabs.map((tab) => {
-          const isActive = current === tab.name;
+    <!-- Uncluttered, spaced navigation links -->
+    <div class="flex items-center space-x-5 sm:space-x-7 text-sm">
+      <nav class="flex items-center space-x-5 sm:space-x-7">
+        {navLinks.map((link) => {
+          const isActive = current === link.name;
           return (
             <a 
-              href={tab.href}
-              class={`px-2 py-1 rounded transition-colors duration-150 flex items-center gap-1 ${
+              href={link.href}
+              class={`transition-colors duration-150 ${
                 isActive 
-                  ? 'text-black dark:text-white font-medium bg-neutral-100 dark:bg-neutral-800' 
-                  : 'text-neutral-400 dark:text-neutral-500 hover:text-black dark:hover:text-white'
+                  ? 'text-neutral-900 dark:text-neutral-100 font-medium' 
+                  : 'text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100'
               }`}
-              title={`Press ${tab.key} for ${tab.name}`}
             >
-              <span>{tab.name}</span>
-              <span class={`hidden md:inline-block text-[9px] font-mono ${isActive ? 'opacity-80' : 'opacity-40'}`}>
-                {tab.key}
-              </span>
+              {link.name}
             </a>
           );
         })}
       </nav>
 
-      <div class="h-3.5 w-px bg-neutral-200 dark:bg-neutral-800 mx-1 shrink-0"></div>
+      <div class="h-3.5 w-px bg-neutral-200 dark:bg-neutral-800"></div>
 
-      <!-- Theme Toggle -->
+      <!-- Subtle Theme Toggle -->
       <button 
         id="theme-toggle"
         aria-label="Toggle Theme"
         onclick="window.toggleTheme()"
-        class="p-1 rounded text-neutral-400 hover:text-black dark:hover:text-white transition-colors duration-150 shrink-0"
+        class="text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100 transition-colors p-1"
       >
-        <svg class="w-3.5 h-3.5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
-        <svg class="w-3.5 h-3.5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        <svg class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       </button>
     </div>
