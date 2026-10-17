@@ -4,72 +4,70 @@ interface Props {
 }
 
 const { current = '' } = Astro.props;
+
+const tabs = [
+  { name: 'home', href: '/', key: '1' },
+  { name: 'writing', href: '/writing', key: '2' },
+  { name: 'work', href: '/work', key: '3' },
+  { name: 'projects', href: '/projects', key: '4' },
+  { name: 'books', href: '/books', key: '5' },
+  { name: 'uses', href: '/uses', key: '6' },
+  { name: 'about', href: '/about', key: '7' },
+];
 ---
 
-<!-- Floating / Sticky Frosted Navigation inspired by onur.dev -->
-<div class="sticky top-6 z-50 mb-12 flex justify-center">
-  <nav class="flex items-center gap-1 sm:gap-2 px-3 py-2 rounded-full border border-neutral-200/80 dark:border-neutral-800/80 bg-white/70 dark:bg-neutral-900/70 backdrop-blur-md shadow-sm">
-    <a 
-      href="/" 
-      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'home' || current === '' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
-      title="Press 1 for Home"
-    >
-      <span>Home</span>
-      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">1</kbd>
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-[#090a0f]/90 backdrop-blur-md pt-5 pb-4 mb-10 border-b border-neutral-200/80 dark:border-neutral-800/80 transition-colors">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <!-- Brand / Name -->
+    <a href="/" class="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 hover:opacity-80 transition-opacity flex items-center gap-2">
+      <span>Abhishek Singh</span>
+      <span class="text-[11px] font-mono text-neutral-400 font-normal">/ PM & Builder</span>
     </a>
 
-    <a 
-      href="/#work" 
-      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'work' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
-      title="Press 2 for Work"
-    >
-      <span>Work</span>
-      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">2</kbd>
-    </a>
+    <!-- Top Persistent Navigation Tabs -->
+    <div class="flex items-center justify-between sm:justify-end gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-0.5">
+      <nav class="flex items-center gap-1 sm:gap-1.5 text-xs">
+        {tabs.map((tab) => {
+          const isActive = current === tab.name;
+          return (
+            <a 
+              href={tab.href}
+              class={`px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 group ${
+                isActive 
+                  ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 font-medium shadow-xs' 
+                  : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800/60'
+              }`}
+              title={`Press ${tab.key} to visit ${tab.name}`}
+            >
+              <span>{tab.name}</span>
+              <kbd class={`hidden md:inline-block text-[9px] font-mono rounded px-1 ${
+                isActive 
+                  ? 'bg-neutral-800 text-neutral-300 dark:bg-neutral-200 dark:text-neutral-700' 
+                  : 'text-neutral-400 dark:text-neutral-500 group-hover:text-neutral-700 dark:group-hover:text-neutral-300'
+              }`}>
+                {tab.key}
+              </kbd>
+            </a>
+          );
+        })}
+      </nav>
 
-    <a 
-      href="/writing" 
-      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'writing' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
-      title="Press 3 for Writing"
-    >
-      <span>Writing</span>
-      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">3</kbd>
-    </a>
+      <div class="h-4 w-px bg-neutral-200 dark:bg-neutral-800 mx-1 shrink-0"></div>
 
-    <a 
-      href="/#projects" 
-      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'projects' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
-      title="Projects"
-    >
-      <span>Projects</span>
-    </a>
-
-    <a 
-      href="/about" 
-      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'about' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
-      title="Press 4 for About"
-    >
-      <span>About</span>
-      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">4</kbd>
-    </a>
-
-    <div class="h-4 w-px bg-neutral-200 dark:bg-neutral-800 mx-0.5 sm:mx-1"></div>
-
-    <!-- Theme toggle -->
-    <button 
-      id="theme-toggle"
-      aria-label="Toggle Theme"
-      onclick="window.toggleTheme()"
-      class="p-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
-    >
-      <!-- Sun icon for dark mode -->
-      <svg class="w-3.5 h-3.5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-      <!-- Moon icon for light mode -->
-      <svg class="w-3.5 h-3.5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-      </svg>
-    </button>
-  </nav>
-</div>
+      <!-- Theme Toggle -->
+      <button 
+        id="theme-toggle"
+        aria-label="Toggle Theme"
+        onclick="window.toggleTheme()"
+        class="p-1.5 rounded-md text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 transition-colors shrink-0"
+      >
+        <svg class="w-3.5 h-3.5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg class="w-3.5 h-3.5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>

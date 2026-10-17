@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = "Abhishek Singh | Staff PM, 2x Founder & Builder",
+  title = "Abhishek Singh",
   description = "Staff Product Manager leading Non-Human Identity & AI Agent Governance at Oleria. 2x Founder, builder of Gatsby, IIT BHU alumnus.",
 } = Astro.props;
 ---
@@ -26,11 +26,8 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
 
-    <!-- Prevent Flash of Unstyled Content (FOUC) for Dark Mode -->
+    <!-- Dark Mode FOUC fix -->
     <script is:inline>
       const getThemePreference = () => {
         if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -42,13 +39,12 @@ const {
       document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
     </script>
   </head>
-  <body class="min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white dark:selection:bg-neutral-200 dark:selection:text-black">
-    <div class="max-w-2xl mx-auto px-6 py-6 sm:py-8 w-full flex-1">
+  <body class="min-h-screen flex flex-col justify-between selection:bg-neutral-900 selection:text-white dark:selection:bg-neutral-100 dark:selection:text-black">
+    <div class="max-w-2xl mx-auto px-5 sm:px-6 w-full flex-1 pb-16">
       <slot />
     </div>
 
     <script>
-      // Theme toggle listener helper
       window.toggleTheme = () => {
         const isDark = document.documentElement.classList.contains('dark');
         const nextTheme = isDark ? 'light' : 'dark';
@@ -56,20 +52,22 @@ const {
         localStorage.setItem('theme', nextTheme);
       };
 
-      // onur.dev style keyboard shortcuts: 1=Home, 2=Work, 3=Writing, 4=About
+      // Number key navigation across tabs: 1=Home, 2=Writing, 3=Work, 4=Projects, 5=Books, 6=Uses, 7=About
       document.addEventListener('keydown', (e) => {
-        // Ignore if focus is in an input or textarea
         if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
         if (e.metaKey || e.ctrlKey || e.altKey) return;
 
         const routes: Record<string, string> = {
           '1': '/',
-          '2': '/#work',
-          '3': '/writing',
-          '4': '/about',
+          '2': '/writing',
+          '3': '/work',
+          '4': '/projects',
+          '5': '/books',
+          '6': '/uses',
+          '7': '/about',
         };
 
-        if (routes[e.key]) {
+        if (routes[e.key] && window.location.pathname !== routes[e.key]) {
           window.location.href = routes[e.key];
         }
       });

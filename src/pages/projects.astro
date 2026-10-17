@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Projects & Craft | Abhishek Singh"
+  description="Software tools, products, and open-source experiments built by Abhishek Singh."
+>
+  <Header current="projects" />
+
+  <main class="space-y-10">
+    <div class="space-y-2">
+      <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+        Projects & Craft
+      </h1>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        A collection of desktop tools, commercial startups, and open-source experiments I've built.
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      <!-- Gatsby -->
+      <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/40 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Gatsby</h2>
+              <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">macOS App</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900/40">v0.0.5</span>
+            </div>
+            <p class="text-xs font-mono text-neutral-500 dark:text-neutral-400 mt-1">
+              Rust (Tauri v2) • React • TypeScript • Tailwind CSS • Vite
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2 shrink-0">
+            <a 
+              href="https://github.com/abhisheksingh0196/gatsby-releases/releases" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-xs font-medium px-3 py-1.5 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 hover:opacity-90 transition-opacity"
+            >
+              Download DMG ↗
+            </a>
+          </div>
+        </div>
+
+        <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          A hyper-minimalist, blisteringly fast e-book manager and Kindle companion app built exclusively for macOS. It bypasses the memory and UI bloat of Calibre, consuming ~40MB RAM and taking &lt;15MB disk space.
+        </p>
+
+        <div class="space-y-2 text-xs text-neutral-600 dark:text-neutral-400">
+          <p class="font-medium text-neutral-900 dark:text-neutral-200">Key Engineering Highlights:</p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li><strong>Kindle Cover Bug Bypass:</strong> Dynamically patches the AZW3 binary header with a unique ASIN and injects high-res covers into Kindle's hidden thumbnail cache.</li>
+            <li><strong>APNX Page Generator:</strong> Lightweight byte-offset calculator that generates genuine page numbers for Kindle side-loaded books.</li>
+            <li><strong>Strict Sandboxing:</strong> Scoped asset protocol and CSP preventing arbitrary script execution from untrusted e-book files.</li>
+          </ul>
+        </div>
+
+        <div class="pt-3 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs text-neutral-500">
+          <a href="/writing/building-gatsby-desktop-app" class="hover:text-black dark:hover:text-white transition-colors underline decoration-neutral-300 dark:decoration-neutral-700">
+            Read: Why I built Gatsby →
+          </a>
+          <a href="https://github.com/abhisheksingh0196/gatsby-releases" target="_blank" rel="noopener noreferrer" class="hover:text-black dark:hover:text-white transition-colors">
+            GitHub Releases ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Komma Platform -->
+      <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/40 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors space-y-3">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Komma Platform</h2>
+              <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">Acquired</span>
+            </div>
+            <p class="text-xs font-mono text-neutral-500 dark:text-neutral-400 mt-1">
+              Python • React • Distributed Data Notebooks
+            </p>
+          </div>
+          <span class="text-xs font-mono text-neutral-400">2022 — 2024</span>
+        </div>
+
+        <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          Collaborative analytics notebook for modern data engineering and analytics teams, enabling frictionless sharing of reproducible SQL and Python workflows. Acquired by a Series A fintech in 2024.
+        </p>
+      </div>
+
+      <!-- Dashh -->
+      <div class="p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/40 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors space-y-3">
+        <div class="flex items-start justify-between">
+          <div>
+            <h2 class="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Dashh Checkout</h2>
+            <p class="text-xs font-mono text-neutral-500 dark:text-neutral-400 mt-1">
+              Node.js • React • Payment Gateways
+            </p>
+          </div>
+          <span class="text-xs font-mono text-neutral-400">2021 — 2022</span>
+        </div>
+
+        <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          Headless 1-click checkout engine for direct-to-consumer e-commerce brands, built in 2.5 months to eliminate cart abandonment and simplify payment flows.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
