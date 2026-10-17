@@ -1,20 +1,22 @@
 ---
 title: "Running as a way of slowing down"
-description: "How moving your body physically forces your mental pace to reset."
+description: "Why locking your attention onto pace and distance is the best form of meditation."
 pubDate: 2026-10-18T09:00:00.000Z
 draft: true
 ---
 
-On paper, running is an exercise in speed. You track pace per kilometer, monitor your heart rate, and try to finish faster than last week.
+During a normal workday, your mind moves in frantic zigzags. 
 
-In reality, running is the most reliable way I know to slow down my mind.
+You reply to a message, check a dashboard, review a pull request, and wonder what to eat for dinner. You jump between different contexts every few minutes. Your body sits motionless in a chair while your brain runs at an unsustainable speed.
 
-During a normal workday, your brain moves in frantic zigzags. You respond to a message, review a pull request, glance at a dashboard, and plan what to eat for dinner. You jump between different contexts every few minutes. Your body sits motionless in a chair while your mind runs at an unsustainable speed.
+When you go for a run, that chaos disappears.
 
-When you tie your shoes and head out the door, that dynamic flips.
+You set a goal before stepping out the door. You have a target pace in mind and a distance you want to finish. Once your feet hit the pavement, that simple goal takes over your entire consciousness. 
 
-Suddenly, your body is doing all the work. Your mind has nowhere to hide. You cannot switch tabs. You cannot check what someone posted two minutes ago. If you try to overthink a work problem while climbing a steep incline, your lungs quickly remind you where you actually are.
+Your mind narrows down to two things: the speed you are holding and the distance left ahead of you. 
 
-Around the third kilometer, something subtle happens. The mental chatter begins to drop away. The problems that felt overwhelming an hour earlier shrink down to their real size. 
+There is no room left for anything else. You cannot worry about tomorrow's roadmap while your lungs and legs are working to hold a specific pace. You cannot ruminate on an awkward conversation from three days ago. If your attention drifts, your pace drops, and your body immediately pulls you back to the present moment.
 
-You are just a person moving through the air, putting one foot in front of the other. It is simple, slightly uncomfortable, and completely grounding.
+People often talk about meditation as sitting still in a quiet room, trying to empty your thoughts. That has never worked well for me.
+
+Running does it naturally. It forces a singular focus by demanding your physical effort. By the time you finish your kilometers, the mental noise has evaporated. You didn't force your mind to slow down. The rhythm of the run did it for you.
