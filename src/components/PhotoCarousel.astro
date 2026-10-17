@@ -1,0 +1,203 @@
+---
+const slides = [
+  {
+    id: "dsci-paper",
+    tag: "National Publication",
+    title: "Identity Security in the AI Era",
+    subtitle: "Co-authored with DSCI (Data Security Council of India)",
+    date: "2026",
+    linkText: "Read publication details in About →",
+    href: "/about#dsci-paper",
+    type: "paper",
+  },
+  {
+    id: "conf-identity-summit",
+    tag: "Conference Keynote",
+    title: "Enterprise Identity World 2026",
+    subtitle: "Speaking on Non-Human Identity Governance & AI Agent Security",
+    date: "2026",
+    linkText: "View conference highlights →",
+    href: "/about#conf-identity-summit",
+    type: "conference",
+  },
+  {
+    id: "conf-cloud-sec",
+    tag: "Panel Discussion",
+    title: "Global Cloud Security Summit",
+    subtitle: "Panel: Governing Machine Credentials Across Multi-Cloud Workloads",
+    date: "2025",
+    linkText: "View panel notes →",
+    href: "/about#conf-cloud-sec",
+    type: "conference",
+  },
+  {
+    id: "meetup-bengaluru",
+    tag: "Community Meetup",
+    title: "Bengaluru Identity Security Meetup",
+    subtitle: "Live Demo: Querying Full Context Graphs using Model Context Protocol (MCP)",
+    date: "2026",
+    linkText: "See meetup details →",
+    href: "/about#meetup-bengaluru",
+    type: "meetup",
+  },
+  {
+    id: "meetup-builders",
+    tag: "Developer Meetup",
+    title: "Security Builders & Founders Meetup",
+    subtitle: "Discussion: Transitioning from 0-to-1 Founder to Enterprise Staff PM",
+    date: "2025",
+    linkText: "See meetup details →",
+    href: "/about#meetup-builders",
+    type: "meetup",
+  },
+];
+---
+
+<div class="space-y-3">
+  <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
+    <div class="flex items-center gap-2">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+        Talks, Paper & Community
+      </h2>
+      <span class="text-[11px] font-mono text-neutral-400">
+        (<span id="carousel-current">1</span>/{slides.length})
+      </span>
+    </div>
+
+    <!-- Manual Carousel Controls (Strictly click-driven, never auto-advancing) -->
+    <div class="flex items-center gap-1.5">
+      <button 
+        id="carousel-prev" 
+        aria-label="Previous slide"
+        class="p-1 rounded text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button 
+        id="carousel-next" 
+        aria-label="Next slide"
+        class="p-1 rounded text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Carousel Viewport -->
+  <div class="relative overflow-hidden rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/60 dark:bg-neutral-900/40">
+    <div id="carousel-track" class="flex transition-transform duration-300 ease-out">
+      {slides.map((slide, index) => (
+        <div class="w-full shrink-0 p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
+          <!-- Visual Placeholder Card (Styled like a photo/paper cover) -->
+          <div class="w-full sm:w-48 h-36 shrink-0 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 flex flex-col justify-between p-3.5 shadow-xs relative">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
+                {slide.tag}
+              </span>
+              <span class="text-[10px] font-mono text-neutral-400">{slide.date}</span>
+            </div>
+
+            <!-- Graphic / Mock Icon per slide type -->
+            <div class="my-auto py-2">
+              {slide.type === 'paper' && (
+                <div class="space-y-1">
+                  <div class="w-6 h-6 rounded bg-blue-50 dark:bg-blue-950 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <p class="text-[11px] font-bold text-neutral-900 dark:text-neutral-100 leading-tight">DSCI Whitepaper</p>
+                  <p class="text-[9px] text-neutral-500 font-mono">National Industry Report</p>
+                </div>
+              )}
+
+              {slide.type === 'conference' && (
+                <div class="space-y-1">
+                  <div class="w-6 h-6 rounded bg-purple-50 dark:bg-purple-950 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
+                    </svg>
+                  </div>
+                  <p class="text-[11px] font-bold text-neutral-900 dark:text-neutral-100 leading-tight">Stage / Keynote</p>
+                  <p class="text-[9px] text-neutral-500 font-mono">Conference Session</p>
+                </div>
+              )}
+
+              {slide.type === 'meetup' && (
+                <div class="space-y-1">
+                  <div class="w-6 h-6 rounded bg-emerald-50 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <p class="text-[11px] font-bold text-neutral-900 dark:text-neutral-100 leading-tight">Security Meetup</p>
+                  <p class="text-[9px] text-neutral-500 font-mono">Tech Demo & Panel</p>
+                </div>
+              )}
+            </div>
+
+            <p class="text-[9px] font-mono text-neutral-400 truncate">Abhishek Singh</p>
+          </div>
+
+          <!-- Slide Content & Link to About Section -->
+          <div class="flex-1 space-y-2 text-left">
+            <div>
+              <span class="text-xs font-mono text-neutral-500 dark:text-neutral-400">{slide.tag}</span>
+              <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 leading-snug">
+                {slide.title}
+              </h3>
+            </div>
+            <p class="text-xs text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              {slide.subtitle}
+            </p>
+            <div class="pt-2">
+              <a 
+                href={slide.href} 
+                class="inline-flex items-center gap-1 text-xs text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white font-medium"
+              >
+                {slide.linkText}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = 5;
+
+  const track = document.getElementById('carousel-track');
+  const counter = document.getElementById('carousel-current');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  function updateCarousel() {
+    if (track) {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    if (counter) {
+      counter.textContent = (currentSlide + 1).toString();
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    });
+  }
+</script>

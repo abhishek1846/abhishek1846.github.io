@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import PhotoCarousel from '../components/PhotoCarousel.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('writing'))
@@ -27,69 +28,90 @@ const formatDate = (date: Date) => {
         Hi, I'm Abhishek.
       </h1>
       <p class="text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-        I am a Staff Product Manager and two-time former founder based in Bengaluru. Currently leading product for 
+        I am a Staff Product Manager and two-time founder based in Bengaluru. Currently leading product for 
         <span class="text-neutral-900 dark:text-white font-medium">Non-Human Identity (NHI) & AI Agent Governance</span> at 
         <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 hover:decoration-neutral-900 dark:decoration-neutral-700 dark:hover:decoration-neutral-200">Oleria</a>.
       </p>
       <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-        I love working at the intersection of deep technical infrastructure, 0-to-1 product strategy, and clean, unbloated software design.
+        I focus on enterprise identity security, agentic software systems, and building zero-bloat desktop tools.
       </p>
     </section>
 
-    <!-- What I'm doing now -->
-    <section class="space-y-3 p-4 rounded-xl border border-neutral-200/90 dark:border-neutral-800/80 bg-neutral-50/60 dark:bg-neutral-900/30">
-      <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>What I'm focused on now</span>
-      </div>
-      <ul class="text-sm text-neutral-700 dark:text-neutral-300 space-y-2 list-disc pl-5 leading-relaxed">
-        <li>
-          Scaling identity security and autonomous AI agent discovery at Oleria across Fortune 500 environments.
-        </li>
-        <li>
-          Building <a href="/projects" class="underline decoration-neutral-400 dark:decoration-neutral-600 hover:text-black dark:hover:text-white">Gatsby</a>, a native macOS e-book manager in Rust & Tauri to replace bloated legacy tools.
-        </li>
-        <li>
-          Writing essays on machine credentials, agentic meshes, and lessons from building 0-to-1 startups.
-        </li>
-      </ul>
+    <!-- Click-only Photo / Paper / Talks Carousel linking to About -->
+    <section>
+      <PhotoCarousel />
     </section>
 
-    <!-- Recent Writing -->
+    <!-- Work Highlights Snapshot (Brief highlights only, linking to full resume) -->
     <section class="space-y-4">
-      <div class="flex items-center justify-between pb-2 border-b border-neutral-200 dark:border-neutral-800">
+      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
         <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
-          Recent Writing
+          Where I've Worked
         </h2>
-        <a href="/writing" class="text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-          All essays →
+        <a 
+          href="/resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-xs font-mono text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white underline decoration-neutral-300 dark:decoration-neutral-700 transition-colors"
+        >
+          Full Resume (PDF) ↗
         </a>
       </div>
 
-      <div class="space-y-5">
-        {posts.map((post) => (
-          <article class="group">
-            <a href={`/writing/${post.id}`} class="block space-y-1">
-              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {post.data.title}
-                </h3>
-                <span class="text-xs font-mono text-neutral-400 shrink-0">
-                  {formatDate(post.data.pubDate)}
-                </span>
-              </div>
-              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-2">
-                {post.data.description}
-              </p>
-            </a>
-          </article>
-        ))}
+      <div class="space-y-3 text-sm">
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Oleria</span>
+            <span class="text-neutral-500 text-xs"> — Staff Product Manager (NHI & AI Governance)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2025 — Present</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Kloudfuse</span>
+            <span class="text-neutral-500 text-xs"> — Product & Growth Lead, India (Observability)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2024 — 2025</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Komma</span>
+            <span class="text-neutral-500 text-xs"> — Co-Founder & CEO (Acquired by Series A fintech)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2022 — 2024</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Dashh</span>
+            <span class="text-neutral-500 text-xs"> — Co-Founder (1-click checkout)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2021 — 2022</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">PharmEasy</span>
+            <span class="text-neutral-500 text-xs"> — Senior Product Manager (Docon, 1M+ Rx/mo)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2018 — 2021</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">ZS Associates</span>
+            <span class="text-neutral-500 text-xs"> — Decision Analytics Associate</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2017 — 2018</span>
+        </div>
       </div>
     </section>
 
-    <!-- Featured Craft: Gatsby -->
+    <!-- Featured Project: Gatsby -->
     <section class="space-y-4">
-      <div class="flex items-center justify-between pb-2 border-b border-neutral-200 dark:border-neutral-800">
+      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
         <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
           Featured Project
         </h2>
@@ -98,7 +120,7 @@ const formatDate = (date: Date) => {
         </a>
       </div>
 
-      <div class="p-5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900/50 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors">
+      <div class="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/40 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors">
         <div class="flex items-start justify-between gap-3">
           <div>
             <div class="flex items-center gap-2">
@@ -120,7 +142,7 @@ const formatDate = (date: Date) => {
           </a>
         </div>
         <p class="text-sm text-neutral-600 dark:text-neutral-300 mt-3 leading-relaxed">
-          A hyper-minimalist, lightning-fast e-book manager built exclusively for macOS. Bypasses Calibre's bloat (consumes ~40MB RAM) and solves Kindle cover thumbnail and APNX page number bugs automatically.
+          A hyper-minimalist e-book manager built exclusively for macOS. Bypasses Calibre's bloat (consumes ~40MB RAM) and solves Kindle cover thumbnail and APNX page number bugs automatically.
         </p>
         <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs text-neutral-500">
           <a href="/writing/building-gatsby-desktop-app" class="hover:text-black dark:hover:text-white transition-colors underline decoration-neutral-300 dark:decoration-neutral-700">
@@ -133,14 +155,36 @@ const formatDate = (date: Date) => {
       </div>
     </section>
 
-    <!-- Quick Navigation Links -->
-    <section class="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap gap-4 text-xs font-mono text-neutral-500">
-      <span>Explore:</span>
-      <a href="/work" class="hover:text-neutral-900 dark:hover:text-neutral-100 underline">Work & Experience</a>
-      <a href="/projects" class="hover:text-neutral-900 dark:hover:text-neutral-100 underline">Projects</a>
-      <a href="/books" class="hover:text-neutral-900 dark:hover:text-neutral-100 underline">Reading List</a>
-      <a href="/uses" class="hover:text-neutral-900 dark:hover:text-neutral-100 underline">Tools I Use</a>
-      <a href="/about" class="hover:text-neutral-900 dark:hover:text-neutral-100 underline">About Me</a>
+    <!-- Recent Writing -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Recent Writing
+        </h2>
+        <a href="/writing" class="text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+          All essays →
+        </a>
+      </div>
+
+      <div class="space-y-4">
+        {posts.map((post) => (
+          <article class="group">
+            <a href={`/writing/${post.id}`} class="block space-y-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {post.data.title}
+                </h3>
+                <span class="text-xs font-mono text-neutral-400 shrink-0">
+                  {formatDate(post.data.pubDate)}
+                </span>
+              </div>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2">
+                {post.data.description}
+              </p>
+            </a>
+          </article>
+        ))}
+      </div>
     </section>
   </main>
 

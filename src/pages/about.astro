@@ -6,85 +6,232 @@ import Footer from '../components/Footer.astro';
 
 <Layout 
   title="About | Abhishek Singh"
-  description="Staff Product Manager at Oleria, 2x founder, IIT BHU alumnus, and builder."
+  description="Background, story, publications, and conference talks of Abhishek Singh."
 >
   <Header current="about" />
 
-  <main class="space-y-10">
+  <main class="space-y-12">
+    <!-- Bio Intro -->
     <div class="space-y-3">
       <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
         About Me
       </h1>
       <p class="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
-        I'm a Staff Product Manager and 2x former founder with over 8 years of experience building products across enterprise security, agentic AI, developer platforms, and high-growth consumer technology.
+        I am a Staff Product Manager and two-time former founder with over 8 years of experience building products across enterprise security, agentic AI, developer platforms, and high-growth consumer technology.
       </p>
     </div>
 
     <!-- Career Trajectory Narrative -->
     <section class="space-y-4 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-200 dark:border-neutral-800 pb-2">
-        My Journey
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-100 dark:border-neutral-900 pb-2">
+        My Story
       </h2>
 
       <p>
-        I graduated from <span class="text-neutral-900 dark:text-white font-medium">IIT (BHU), Varanasi</span> in 2017 and began my career in decision analytics at <span class="text-neutral-900 dark:text-white font-medium">ZS Associates</span>, working with Fortune 500 enterprise clients on complex data modeling and market strategy.
+        I graduated from <span class="text-neutral-900 dark:text-white font-medium">IIT (BHU), Varanasi</span> in 2017. I started my career in decision analytics at <span class="text-neutral-900 dark:text-white font-medium">ZS Associates</span>, working with Fortune 500 US clients on data modeling and market strategy.
       </p>
 
       <p>
-        Drawn to high-velocity product execution, I joined <span class="text-neutral-900 dark:text-white font-medium">PharmEasy</span>. Over three years during its hyper-growth phase, I owned the roadmap for <span class="text-neutral-900 dark:text-white font-medium">Docon</span>, a digital prescription platform scaled to ~1M prescriptions per month, as well as B2B analytics dashboards for pharmaceutical companies.
+        Drawn to fast-paced consumer and B2B software, I joined <span class="text-neutral-900 dark:text-white font-medium">PharmEasy</span>, where I owned product for <span class="text-neutral-900 dark:text-white font-medium">Docon</span> (scaling digital prescriptions to ~1M/month) and pharmaceutical enterprise analytics.
       </p>
 
       <p>
-        In 2021, I made the jump into full-time entrepreneurship:
-      </p>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>
-          <strong class="text-neutral-900 dark:text-white">Dashh (2021–2022):</strong> Built a 1-click checkout engine for e-commerce brands in 2.5 months with 2 engineers. Onboarded 10 brands, optimized conversion rates, and turned down 2 acquihire offers.
-        </li>
-        <li>
-          <strong class="text-neutral-900 dark:text-white">Komma (2022–2024):</strong> Built a collaborative analytics notebook for data teams. Conducted 150+ deep-dive interviews with data leaders from companies like Twilio and United Airlines, closed 6 enterprise PoCs, and raised a VC+Angel round. Our team was acquired by a Series A fintech in March 2024.
-        </li>
-      </ul>
-
-      <p>
-        After the acquisition, I served as <span class="text-neutral-900 dark:text-white font-medium">Product & Growth Lead (India) at Kloudfuse</span>, opening their India presence and onboarding major enterprise customers including 1mg, Innovacer, and GE Health, while launching Real User Monitoring (RUM).
+        In 2021, I jumped into full-time entrepreneurship. I co-founded <strong class="text-neutral-900 dark:text-white">Dashh</strong> (1-click checkout engine for e-commerce brands, built in 2.5 months with 2 engineers, turned down 2 acquihire offers), and later co-founded <strong class="text-neutral-900 dark:text-white">Komma</strong> as CEO (collaborative analytics notebooks for modern data teams; interviewed 150+ data leaders, raised a Pre-Seed round, closed 6 enterprise PoCs, and got acquired by a Series A fintech in 2024).
       </p>
 
       <p>
-        Today, I'm the <span class="text-neutral-900 dark:text-white font-medium">Staff Product Manager at Oleria</span>. I lead our Non-Human Identity (NHI) and AI Agent Governance initiatives across 30+ engineers, shaping how modern enterprises monitor, govern, and secure autonomous agents (Gemini Enterprise, Salesforce Agentforce, AWS Bedrock) and machine credentials.
+        After serving as Product & Growth Lead in India for <span class="text-neutral-900 dark:text-white font-medium">Kloudfuse</span>, I joined <span class="text-neutral-900 dark:text-white font-medium">Oleria</span> as Staff Product Manager. Today, I lead product across ~30 engineers for our Non-Human Identity (NHI) and autonomous AI Agent Governance platform.
       </p>
     </section>
 
-    <!-- Thought Leadership & Publications -->
-    <section class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-200 dark:border-neutral-800 pb-2">
-        Publications & Thought Leadership
-      </h2>
-      <p>
-        Co-authored <span class="italic font-medium text-neutral-900 dark:text-white">"Identity Security Maturity in the AI Era"</span> with the <span class="text-neutral-900 dark:text-white font-medium">Data Security Council of India (DSCI)</span>, establishing governance benchmarks for machine identities and autonomous enterprise AI agents.
-      </p>
+    <!-- Work Highlights & Resume PDF link -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Work Highlights
+        </h2>
+        <a 
+          href="/resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-xs font-mono text-neutral-900 dark:text-neutral-100 hover:text-blue-600 dark:hover:text-blue-400 underline decoration-neutral-300 dark:decoration-neutral-700 transition-colors"
+        >
+          Download Full Resume (PDF) ↗
+        </a>
+      </div>
+
+      <div class="space-y-3 text-sm">
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Oleria</span>
+            <span class="text-neutral-500 text-xs"> — Staff Product Manager (NHI & AI Governance)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2025 — Present</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Kloudfuse</span>
+            <span class="text-neutral-500 text-xs"> — Product & Growth Lead, India (Observability)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2024 — 2025</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Komma</span>
+            <span class="text-neutral-500 text-xs"> — Co-Founder & CEO (Acquired by Series A fintech)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2022 — 2024</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">Dashh</span>
+            <span class="text-neutral-500 text-xs"> — Co-Founder (1-click checkout)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2021 — 2022</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">PharmEasy</span>
+            <span class="text-neutral-500 text-xs"> — Senior Product Manager (Docon, 1M+ Rx/mo)</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2018 — 2021</span>
+        </div>
+
+        <div class="flex items-baseline justify-between">
+          <div>
+            <span class="font-medium text-neutral-900 dark:text-neutral-100">ZS Associates</span>
+            <span class="text-neutral-500 text-xs"> — Decision Analytics Associate</span>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 shrink-0">2017 — 2018</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Craft & Interests -->
-    <section class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-200 dark:border-neutral-800 pb-2">
-        Craft & Side Pursuits
-      </h2>
-      <p>
-        Outside of product management, I love writing native desktop utilities that strip out the bloat of modern software. I built <a href="https://github.com/abhisheksingh0196/gatsby-releases" class="text-neutral-900 dark:text-white underline" target="_blank" rel="noopener noreferrer">Gatsby</a>, a native macOS e-book manager in Rust and Tauri.
-      </p>
-      <p>
-        I'm also an avid reader across world literature, political economy, and philosophy (currently reading Rohinton Mistry, Albert Camus, Neil Postman, and Matt Ridley).
-      </p>
+    <!-- Talks, Publications & Gallery (Linked from Home Carousel) -->
+    <section id="gallery" class="space-y-6">
+      <div class="pb-2 border-b border-neutral-100 dark:border-neutral-900">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Publications, Talks & Meetups
+        </h2>
+        <p class="text-xs text-neutral-500 mt-1">
+          Moments from security conferences, community meetups, and national research publications.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- DSCI Paper -->
+        <article id="dsci-paper" class="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/30 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-medium border border-blue-200 dark:border-blue-900/40">
+                National Whitepaper
+              </span>
+              <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-1.5">
+                Identity Security Maturity in the AI Era
+              </h3>
+            </div>
+            <span class="text-xs font-mono text-neutral-400">Data Security Council of India (DSCI) • 2026</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Co-authored the national industry benchmark paper with DSCI, providing CISOs and enterprise security architects with an actionable maturity model for governing autonomous AI agents, non-human identities, and machine-to-machine trust perimeters.
+          </p>
+          <div class="pt-1">
+            <a 
+              href="https://www.dsci.in/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-xs font-medium text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white"
+            >
+              View on DSCI Website ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Conference 1 -->
+        <article id="conf-identity-summit" class="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/30 space-y-2">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-medium border border-purple-200 dark:border-purple-900/40">
+                Keynote Talk
+              </span>
+              <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-1.5">
+                Enterprise Identity World 2026
+              </h3>
+            </div>
+            <span class="text-xs font-mono text-neutral-400">Keynote Speaker</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Delivered a keynote on the explosion of Non-Human Identities (NHIs) and how autonomous AI agents like Salesforce Agentforce and Gemini Enterprise are reshaping IAM access reviews and permission graphs.
+          </p>
+        </article>
+
+        <!-- Conference 2 -->
+        <article id="conf-cloud-sec" class="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/30 space-y-2">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-medium border border-purple-200 dark:border-purple-900/40">
+                Panel Discussion
+              </span>
+              <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-1.5">
+                Global Cloud Security Summit
+              </h3>
+            </div>
+            <span class="text-xs font-mono text-neutral-400">Panelist</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Joined a panel of enterprise security leaders to discuss governing service accounts across AWS, GCP, and Azure, and the operational reality of moving away from static API secrets.
+          </p>
+        </article>
+
+        <!-- Meetup 1 -->
+        <article id="meetup-bengaluru" class="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/30 space-y-2">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-medium border border-emerald-200 dark:border-emerald-900/40">
+                Community Meetup
+              </span>
+              <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-1.5">
+                Bengaluru Identity Security Meetup
+              </h3>
+            </div>
+            <span class="text-xs font-mono text-neutral-400">Speaker & Host</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Presented a live technical walkthrough demonstrating how Model Context Protocol (MCP) servers can query an identity context graph to answer real-time enterprise security inquiries in natural language.
+          </p>
+        </article>
+
+        <!-- Meetup 2 -->
+        <article id="meetup-builders" class="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/50 dark:bg-neutral-900/30 space-y-2">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-medium border border-emerald-200 dark:border-emerald-900/40">
+                Developer Meetup
+              </span>
+              <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100 mt-1.5">
+                Security Builders & Founders Meetup
+              </h3>
+            </div>
+            <span class="text-xs font-mono text-neutral-400">Bengaluru</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+            Shared war stories from founding two startups (Dashh and Komma), navigating the acquisition process, and translating founder velocity into Staff PM leadership at enterprise scale.
+          </p>
+        </article>
+      </div>
     </section>
 
     <!-- Connect -->
-    <section class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed pt-4 border-t border-neutral-200 dark:border-neutral-800">
+    <section class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed pt-4 border-t border-neutral-100 dark:border-neutral-900">
       <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
         Get In Touch
       </h2>
       <p>
-        Whether you want to chat about AI agent security, product leadership, 0-to-1 startups, or book recommendations, I'm always open to interesting conversations:
+        Always happy to chat about identity security, AI agents, 0-to-1 startups, or book recommendations:
       </p>
       <div class="flex items-center gap-4 text-xs font-mono pt-1">
         <a href="mailto:abhisheksingh1846@gmail.com" class="text-neutral-900 dark:text-white underline hover:opacity-80">
