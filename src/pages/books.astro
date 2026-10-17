@@ -4,122 +4,113 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const books = [
-  // Currently Reading
-  {
-    title: "Zero: The Biography of a Dangerous Idea",
-    author: "Charles Seife",
-    genre: "Mathematics",
-    status: "Reading",
-  },
-  {
-    title: "Dear Life",
-    author: "Alice Munro",
-    genre: "Fiction",
-    status: "Reading",
-  },
-  {
-    title: "Kolyma Tales",
-    author: "Varlam Shalamov",
-    genre: "Memoir",
-    status: "Reading",
-  },
-  // Read
   {
     title: "The Martian",
     author: "Andy Weir",
-    genre: "Sci-Fi",
-    status: "Read",
+    rating: "5.0",
+    recommend: true,
   },
   {
     title: "Project Hail Mary",
     author: "Andy Weir",
-    genre: "Sci-Fi",
-    status: "Read",
-  },
-  {
-    title: "Being Mortal",
-    author: "Atul Gawande",
-    genre: "Medicine",
-    status: "Read",
-  },
-  {
-    title: "Notes on Complexity",
-    author: "Neil Theise",
-    genre: "Science",
-    status: "Read",
-  },
-  {
-    title: "James",
-    author: "Percival Everett",
-    genre: "Fiction",
-    status: "Read",
-  },
-  {
-    title: "The Unbearable Lightness of Being",
-    author: "Milan Kundera",
-    genre: "Philosophy",
-    status: "Read",
-  },
-  {
-    title: "Ghachar Ghochar",
-    author: "Vivek Shanbhag",
-    genre: "Fiction",
-    status: "Read",
+    rating: "5.0",
+    recommend: true,
   },
   {
     title: "Ask the Dust",
     author: "John Fante",
-    genre: "Fiction",
-    status: "Read",
+    rating: "4.5",
+    recommend: true,
   },
   {
-    title: "The Moon and Sixpence",
-    author: "W. Somerset Maugham",
-    genre: "Classics",
-    status: "Read",
+    title: "James",
+    author: "Percival Everett",
+    rating: "4.5",
+    recommend: true,
   },
   {
-    title: "Pedro Páramo",
-    author: "Juan Rulfo",
-    genre: "Fiction",
-    status: "Read",
-  },
-  {
-    title: "Notes from Underground",
-    author: "Fyodor Dostoyevsky",
-    genre: "Classics",
-    status: "Read",
+    title: "Being Mortal",
+    author: "Atul Gawande",
+    rating: "4.0",
+    recommend: true,
   },
   {
     title: "Godan (गोदान)",
     author: "Premchand",
-    genre: "Hindi Literature",
-    status: "Read",
+    rating: "4.0",
+    recommend: true,
+  },
+  {
+    title: "Notes on Complexity",
+    author: "Neil Theise",
+    rating: "4.0",
+    recommend: true,
+  },
+  {
+    title: "Zero: The Biography of a Dangerous Idea",
+    author: "Charles Seife",
+    recommend: true,
+  },
+  {
+    title: "Ghachar Ghochar",
+    author: "Vivek Shanbhag",
+    rating: "3.5",
+    recommend: true,
+  },
+  {
+    title: "The Unbearable Lightness of Being",
+    author: "Milan Kundera",
+    rating: "3.5",
+    recommend: true,
+  },
+  {
+    title: "The Moon and Sixpence",
+    author: "W. Somerset Maugham",
+    rating: "3.0",
+    recommend: true,
+  },
+  {
+    title: "Pedro Páramo",
+    author: "Juan Rulfo",
+    rating: "3.0",
+    recommend: true,
+  },
+  {
+    title: "Notes from Underground",
+    author: "Fyodor Dostoyevsky",
+    rating: "3.0",
+    recommend: true,
   },
   {
     title: "Awara Bheed Ke Khatare",
     author: "Harishankar Parsai",
-    genre: "Satire",
-    status: "Read",
+    rating: "3.0",
+    recommend: false,
+  },
+  {
+    title: "Common Stocks and Common Sense",
+    author: "Edgar Wachenheim, III",
+    rating: "2.5",
+    recommend: false,
   },
   {
     title: "A Matter of Rats: A Short Biography of Patna",
     author: "Amitava Kumar",
-    genre: "Memoir",
-    status: "Read",
+    rating: "2.0",
+    recommend: false,
   },
   {
     title: "What is Life?",
     author: "Erwin Schrödinger",
-    genre: "Science",
-    status: "Read",
+    rating: "1.5",
+    recommend: false,
   },
 ];
 ---
 
 <Layout 
   title="Books & Reading | Abhishek Singh"
-  description="Books read by Abhishek Singh across fiction, science, philosophy, and Indian literature."
+  description="Books read by Abhishek Singh with ratings and recommendations."
 >
   <Header current="books" />
 
@@ -149,20 +140,22 @@ const books = [
 
       <div class="divide-y divide-neutral-200 dark:divide-neutral-800">
         {books.map((book) => (
-          <div class="py-3.5 first:pt-0 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
+          <div class="py-3 first:pt-0 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
             <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100">
               {book.title} <span class="text-neutral-400 dark:text-neutral-500 font-normal">by {book.author}</span>
             </h3>
             <div class="flex items-center gap-2 shrink-0">
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
-                {book.genre}
-              </span>
+              {book.rating && (
+                <span class="text-xs font-mono text-neutral-400 dark:text-neutral-500">
+                  {book.rating}
+                </span>
+              )}
               <span class={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
-                book.status === 'Reading' 
-                  ? 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800' 
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-500'
+                book.recommend 
+                  ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/40' 
+                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400'
               }`}>
-                {book.status}
+                {book.recommend ? 'Recommend' : "Don't recommend"}
               </span>
             </div>
           </div>
