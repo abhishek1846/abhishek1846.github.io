@@ -6,57 +6,70 @@ interface Props {
 const { current = '' } = Astro.props;
 ---
 
-<header class="flex items-center justify-between pb-10 border-b border-neutral-200 dark:border-neutral-800 mb-10">
-  <div>
-    <a href="/" class="text-base font-semibold tracking-tight hover:opacity-80 transition-opacity">
-      Abhishek Singh
+<!-- Floating / Sticky Frosted Navigation inspired by onur.dev -->
+<div class="sticky top-6 z-50 mb-12 flex justify-center">
+  <nav class="flex items-center gap-1 sm:gap-2 px-3 py-2 rounded-full border border-neutral-200/80 dark:border-neutral-800/80 bg-white/70 dark:bg-neutral-900/70 backdrop-blur-md shadow-sm">
+    <a 
+      href="/" 
+      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'home' || current === '' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
+      title="Press 1 for Home"
+    >
+      <span>Home</span>
+      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">1</kbd>
     </a>
-    <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-      Staff PM & 2x Founder
-    </p>
-  </div>
 
-  <nav class="flex items-center space-x-4 md:space-x-5 text-sm text-neutral-600 dark:text-neutral-300">
     <a 
       href="/#work" 
-      class="hover:text-black dark:hover:text-white transition-colors"
+      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'work' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
+      title="Press 2 for Work"
     >
-      Work
-    </a>
-    <a 
-      href="/writing" 
-      class={`hover:text-black dark:hover:text-white transition-colors ${current === 'writing' ? 'text-black dark:text-white font-medium' : ''}`}
-    >
-      Writing
-    </a>
-    <a 
-      href="/#projects" 
-      class="hover:text-black dark:hover:text-white transition-colors"
-    >
-      Projects
-    </a>
-    <a 
-      href="/about" 
-      class={`hover:text-black dark:hover:text-white transition-colors ${current === 'about' ? 'text-black dark:text-white font-medium' : ''}`}
-    >
-      About
+      <span>Work</span>
+      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">2</kbd>
     </a>
 
-    <!-- Theme Toggle -->
+    <a 
+      href="/writing" 
+      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'writing' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
+      title="Press 3 for Writing"
+    >
+      <span>Writing</span>
+      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">3</kbd>
+    </a>
+
+    <a 
+      href="/#projects" 
+      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'projects' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
+      title="Projects"
+    >
+      <span>Projects</span>
+    </a>
+
+    <a 
+      href="/about" 
+      class={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-colors ${current === 'about' ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 font-medium' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}
+      title="Press 4 for About"
+    >
+      <span>About</span>
+      <kbd class="hidden sm:inline-block text-[10px] font-mono opacity-50 px-1 py-0.2 bg-neutral-200/60 dark:bg-neutral-700/60 rounded">4</kbd>
+    </a>
+
+    <div class="h-4 w-px bg-neutral-200 dark:bg-neutral-800 mx-0.5 sm:mx-1"></div>
+
+    <!-- Theme toggle -->
     <button 
       id="theme-toggle"
       aria-label="Toggle Theme"
       onclick="window.toggleTheme()"
-      class="p-1.5 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
+      class="p-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
     >
       <!-- Sun icon for dark mode -->
-      <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg class="w-3.5 h-3.5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
       <!-- Moon icon for light mode -->
-      <svg class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg class="w-3.5 h-3.5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
       </svg>
     </button>
   </nav>
-</header>
+</div>
