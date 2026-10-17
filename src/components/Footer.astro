@@ -1,32 +1,24 @@
 ---
-const year = new Date().getFullYear();
+const links = [
+  { name: '@abhishek1846', url: 'https://linkedin.com/in/abhishek1846' },
+  { name: 'github', url: 'https://github.com/abhisheksingh0196' },
+  { name: 'email', url: 'mailto:abhisheksingh1846@gmail.com' },
+];
 ---
 
-<footer class="mt-20 pt-8 border-t border-neutral-200 dark:border-neutral-800 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 dark:text-neutral-400 gap-4">
+<footer class="mt-20 pt-8 border-t border-gray-100 dark:border-neutral-900 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-400 dark:text-neutral-500 gap-4">
   <div class="flex items-center space-x-4">
-    <a 
-      href="https://linkedin.com/in/abhishek1846" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="hover:text-black dark:hover:text-white transition-colors"
-    >
-      LinkedIn ↗
-    </a>
-    <a 
-      href="https://github.com/abhisheksingh0196" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="hover:text-black dark:hover:text-white transition-colors"
-    >
-      GitHub ↗
-    </a>
-    <a 
-      href="mailto:abhisheksingh1846@gmail.com" 
-      class="hover:text-black dark:hover:text-white transition-colors"
-    >
-      Email ↗
-    </a>
+    {links.map((link) => (
+      <a 
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200"
+      >
+        {link.name}
+      </a>
+    ))}
   </div>
 
-  <p>© {year} Abhishek Singh. Built with Astro.</p>
+  <p class="font-mono text-[11px]">© {new Date().getFullYear()} Abhishek Singh</p>
 </footer>

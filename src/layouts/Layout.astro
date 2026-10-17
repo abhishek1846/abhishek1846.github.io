@@ -13,7 +13,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,7 +40,7 @@ const {
     </script>
   </head>
   <body class="min-h-screen flex flex-col justify-between selection:bg-neutral-900 selection:text-white dark:selection:bg-neutral-100 dark:selection:text-black">
-    <div class="max-w-2xl mx-auto px-5 sm:px-6 w-full flex-1 pb-16">
+    <div class="max-w-[60ch] mx-auto px-5 w-full flex-1 pt-6 sm:pt-8 pb-16">
       <slot />
     </div>
 
@@ -52,7 +52,7 @@ const {
         localStorage.setItem('theme', nextTheme);
       };
 
-      // Number key navigation across tabs: 1=Home, 2=Writing, 3=Work, 4=Projects, 5=Books, 6=Uses, 7=About
+      // Tab keyboard shortcuts (1: Home, 2: Writing, 3: Work, 4: Projects, 5: Books, 6: Uses, 7: About)
       document.addEventListener('keydown', (e) => {
         if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
         if (e.metaKey || e.ctrlKey || e.altKey) return;

@@ -1,50 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --bg-page: #ffffff;
-    --bg-surface: #f8fafc;
-    --bg-card: #ffffff;
-    --border-subtle: #e2e8f0;
-    --border-hover: #cbd5e1;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-muted: #94a3b8;
-    --badge-bg: #f1f5f9;
-    --badge-text: #334155;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-  }
+@theme {
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
-  .dark {
-    --bg-page: #090a0f;
-    --bg-surface: #11131a;
-    --bg-card: #131620;
-    --border-subtle: #1e2230;
-    --border-hover: #2e3449;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --badge-bg: #1e2230;
-    --badge-text: #cbd5e1;
-    --accent: #3b82f6;
-    --accent-hover: #60a5fa;
-  }
+:root {
+  --bg-page: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  --border-subtle: #e5e7eb;
+  --border-hover: #d1d5db;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+}
 
-  body {
-    background-color: var(--bg-page);
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.dark {
+  --bg-page: #0a0a0a;
+  --bg-card: #121212;
+  --bg-card-subtle: #171717;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border-subtle: #262626;
+  --border-hover: #404040;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+}
+
+html {
+  min-width: 360px;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.02em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  letter-spacing: -0.03em;
+}
+
+/* Smooth fade-in on mount */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: fadeIn 0.25s ease-out;
 }
 
 /* Typography styles for essays / markdown articles */
 .markdown-content {
   color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: 1.75;
+  font-size: 0.95rem;
 }
 
 .markdown-content p {
@@ -54,50 +82,50 @@
 
 .markdown-content h2 {
   color: var(--text-primary);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-top: 2.5rem;
+  margin-top: 2.25rem;
   margin-bottom: 0.75rem;
-  letter-spacing: -0.015em;
 }
 
 .markdown-content h3 {
   color: var(--text-primary);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   margin-bottom: 0.5rem;
 }
 
 .markdown-content a {
   color: var(--text-primary);
   text-decoration: underline;
+  text-underline-offset: 4px;
   text-decoration-color: var(--border-hover);
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.15s ease;
+  transition: all 0.15s ease-in-out;
 }
 
 .markdown-content a:hover {
+  color: var(--accent);
   text-decoration-color: var(--accent);
 }
 
 .markdown-content ul {
   list-style-type: disc;
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .markdown-content ol {
   list-style-type: decimal;
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .markdown-content li {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
 }
 
 .markdown-content strong {
@@ -106,8 +134,8 @@
 }
 
 .markdown-content blockquote {
-  border-left: 3px solid var(--border-hover);
-  padding-left: 1.25rem;
+  border-left: 2px solid var(--border-hover);
+  padding-left: 1rem;
   font-style: italic;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -115,9 +143,9 @@
 }
 
 .markdown-content code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.875em;
-  background-color: var(--badge-bg);
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.85em;
+  background-color: var(--bg-card-subtle);
   padding: 0.15em 0.35em;
   border-radius: 0.25rem;
   color: var(--text-primary);
@@ -125,13 +153,15 @@
 }
 
 .markdown-content pre {
-  background-color: var(--bg-surface) !important;
+  background-color: #16161e !important;
+  color: #c0caf5;
   border: 1px solid var(--border-subtle);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .markdown-content pre code {
