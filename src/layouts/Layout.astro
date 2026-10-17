@@ -27,13 +27,12 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
 
-    <!-- Instant Theme Setter (Zero FOUC) -->
+    <!-- Instant Theme Setter (Zero FOUC - defaults to light mode) -->
     <script is:inline>
       (function() {
         try {
           const stored = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (stored === 'dark' || (!stored && prefersDark)) {
+          if (stored === 'dark') {
             document.documentElement.classList.add('dark');
           } else {
             document.documentElement.classList.remove('dark');
