@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="About | Abhishek Singh"
+  description="Staff Product Manager at Oleria, 2x founder, IIT BHU alumnus, and builder."
+>
+  <Header current="about" />
+
+  <main class="space-y-10">
+    <div class="space-y-3">
+      <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+        About Me
+      </h1>
+      <p class="text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        I'm a Staff Product Manager and 2x former founder with over 8 years of experience building products across enterprise security, agentic AI, developer platforms, and high-growth consumer technology.
+      </p>
+    </div>
+
+    <!-- Career Trajectory Narrative -->
+    <section class="space-y-4 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-200 dark:border-neutral-800 pb-2">
+        My Journey
+      </h2>
+
+      <p>
+        I graduated from <span class="text-neutral-900 dark:text-white font-medium">IIT (BHU), Varanasi</span> in 2017 and began my career in decision analytics at <span class="text-neutral-900 dark:text-white font-medium">ZS Associates</span>, working with Fortune 500 enterprise clients on complex data modeling and market strategy.
+      </p>
+
+      <p>
+        Drawn to high-velocity product execution, I joined <span class="text-neutral-900 dark:text-white font-medium">PharmEasy</span>. Over three years during its hyper-growth phase, I owned the roadmap for <span class="text-neutral-900 dark:text-white font-medium">Docon</span>, a digital prescription platform scaled to ~1M prescriptions per month, as well as B2B analytics dashboards for pharmaceutical companies.
+      </p>
+
+      <p>
+        In 2021, I made the jump into full-time entrepreneurship:
+      </p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>
+          <strong class="text-neutral-900 dark:text-white">Dashh (2021–2022):</strong> Built a 1-click checkout engine for e-commerce brands in 2.5 months with 2 engineers. Onboarded 10 brands, optimized conversion rates, and turned down 2 acquihire offers.
+        </li>
+        <li>
+          <strong class="text-neutral-900 dark:text-white">Komma (2022–2024):</strong> Built a collaborative analytics notebook for data teams. Conducted 150+ deep-dive interviews with data leaders from companies like Twilio and United Airlines, closed 6 enterprise PoCs, and raised a VC+Angel round. Our team was acquired by a Series A fintech in March 2024.
+        </li>
+      </ul>
+
+      <p>
+        After the acquisition, I served as <span class="text-neutral-900 dark:text-white font-medium">Product & Growth Lead (India) at Kloudfuse</span>, opening their India presence and onboarding major enterprise customers including 1mg, Innovacer, and GE Health, while launching Real User Monitoring (RUM).
+      </p>
+
+      <p>
+        Today, I'm the <span class="text-neutral-900 dark:text-white font-medium">Staff Product Manager at Oleria</span>. I lead our Non-Human Identity (NHI) and AI Agent Governance initiatives across 30+ engineers, shaping how modern enterprises monitor, govern, and secure autonomous agents (Gemini Enterprise, Salesforce Agentforce, AWS Bedrock) and machine credentials.
+      </p>
+    </section>
+
+    <!-- Thought Leadership & Publications -->
+    <section class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-200 dark:border-neutral-800 pb-2">
+        Publications & Thought Leadership
+      </h2>
+      <p>
+        Co-authored <span class="italic font-medium text-neutral-900 dark:text-white">"Identity Security Maturity in the AI Era"</span> with the <span class="text-neutral-900 dark:text-white font-medium">Data Security Council of India (DSCI)</span>, establishing governance benchmarks for machine identities and autonomous enterprise AI agents.
+      </p>
+    </section>
+
+    <!-- Craft & Interests -->
+    <section class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-200 dark:border-neutral-800 pb-2">
+        Craft & Side Pursuits
+      </h2>
+      <p>
+        Outside of product management, I love writing native desktop utilities that strip out the bloat of modern software. I built <a href="https://github.com/abhisheksingh0196/gatsby-releases" class="text-neutral-900 dark:text-white underline" target="_blank" rel="noopener noreferrer">Gatsby</a>, a native macOS e-book manager in Rust and Tauri.
+      </p>
+      <p>
+        I'm also an avid reader across world literature, political economy, and philosophy (currently reading Rohinton Mistry, Albert Camus, Neil Postman, and Matt Ridley).
+      </p>
+    </section>
+
+    <!-- Connect -->
+    <section class="space-y-3 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed pt-4 border-t border-neutral-200 dark:border-neutral-800">
+      <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+        Get In Touch
+      </h2>
+      <p>
+        Whether you want to chat about AI agent security, product leadership, 0-to-1 startups, or book recommendations, I'm always open to interesting conversations:
+      </p>
+      <div class="flex items-center gap-4 text-xs font-mono pt-1">
+        <a href="mailto:abhisheksingh1846@gmail.com" class="text-neutral-900 dark:text-white underline hover:opacity-80">
+          abhisheksingh1846@gmail.com
+        </a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/abhishek1846" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-white underline hover:opacity-80">
+          LinkedIn
+        </a>
+        <span>•</span>
+        <a href="https://github.com/abhisheksingh0196" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-white underline hover:opacity-80">
+          GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

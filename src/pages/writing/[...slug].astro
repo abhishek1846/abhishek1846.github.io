@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date);
+};
+---
+
+<Layout 
+  title={`${post.data.title} | Abhishek Singh`}
+  description={post.data.description}
+>
+  <Header current="writing" />
+
+  <main class="space-y-8">
+    <!-- Back button -->
+    <a 
+      href="/writing" 
+      class="inline-flex items-center gap-1.5 text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+    >
+      ← Back to all essays
+    </a>
+
+    <!-- Header info -->
+    <header class="space-y-3 pb-6 border-b border-neutral-200 dark:border-neutral-800">
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 leading-tight">
+        {post.data.title}
+      </h1>
+      
+      <div class="flex flex-wrap items-center gap-3 text-xs text-neutral-500 dark:text-neutral-400 font-mono">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {formatDate(post.data.pubDate)}
+        </time>
+        <span>•</span>
+        <span>Abhishek Singh</span>
+      </div>
+
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-1.5 pt-1">
+          {post.data.tags.map((tag: string) => (
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <!-- Post Content -->
+    <article class="markdown-content">
+      <Content />
+    </article>
+
+    <!-- Article Footer / Bio sign-off -->
+    <div class="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-800 space-y-4 text-sm text-neutral-600 dark:text-neutral-400">
+      <p>
+        <span class="font-medium text-neutral-900 dark:text-neutral-100">About the author:</span> 
+        Abhishek Singh is a Staff Product Manager leading Non-Human Identity and AI Agent Governance at Oleria, and a 2x former founder.
+      </p>
+      <p>
+        Questions, thoughts, or want to discuss? Reach out on 
+        <a href="https://linkedin.com/in/abhishek1846" target="_blank" rel="noopener noreferrer" class="underline hover:text-black dark:hover:text-white">LinkedIn</a> or email me at 
+        <a href="mailto:abhisheksingh1846@gmail.com" class="underline hover:text-black dark:hover:text-white">abhisheksingh1846@gmail.com</a>.
+      </p>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('writing'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date);
+};
+---
+
+<Layout title="Abhishek Singh | Staff PM & Builder">
+  <Header current="home" />
+
+  <main class="space-y-16">
+    <!-- Hero / Intro -->
+    <section class="space-y-4">
+      <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+        Abhishek Singh
+      </h1>
+      <p class="text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
+        Staff Product Manager and 2x former founder based in Bengaluru. Currently leading product for 
+        <span class="text-neutral-900 dark:text-white font-medium">Non-Human Identity (NHI)</span> and 
+        <span class="text-neutral-900 dark:text-white font-medium">AI Agent Governance</span> at 
+        <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="underline decoration-neutral-400 hover:decoration-neutral-900 dark:decoration-neutral-600 dark:hover:decoration-neutral-100 transition-colors">Oleria</a>.
+      </p>
+      <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+        I specialize in navigating 0-to-1 ambiguity, technical platform engineering, and high-velocity go-to-market execution. In my spare time, I build native macOS utilities and write about identity security, agentic software, and product craft.
+      </p>
+    </section>
+
+    <!-- Selected Work -->
+    <section id="work" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-2">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Experience & Journey
+        </h2>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Oleria -->
+        <div class="group">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
+              <span>Staff Product Manager — Oleria</span>
+              <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">↗</a>
+            </h3>
+            <span class="text-xs font-mono text-neutral-400">2025 — Present</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1.5 leading-relaxed">
+            First PM in India; sole PM across ~30 engineers. Heading Non-Human Identity (NHI) & AI agent governance across Gemini Enterprise, Salesforce Agentforce, and AWS Bedrock. Scaled integration catalog from 20 to 100+ applications and drove $3M in pipeline PoCs.
+          </p>
+        </div>
+
+        <!-- Kloudfuse -->
+        <div class="group">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
+              <span>Product & Growth Lead, India — Kloudfuse</span>
+              <a href="https://kloudfuse.com" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">↗</a>
+            </h3>
+            <span class="text-xs font-mono text-neutral-400">2024 — 2025</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1.5 leading-relaxed">
+            Opened the India market for enterprise unified observability; onboarded 1mg, Innovacer, and GE Health. Led the launch of Real User Monitoring (RUM).
+          </p>
+        </div>
+
+        <!-- Komma -->
+        <div class="group">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100">
+              Co-Founder & CEO — Komma <span class="text-xs text-emerald-600 dark:text-emerald-400 font-normal ml-1 px-1.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/40">Acquired</span>
+            </h3>
+            <span class="text-xs font-mono text-neutral-400">2022 — 2024</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1.5 leading-relaxed">
+            Built a collaborative analytics notebook for modern data teams. Conducted 150+ user interviews with data leaders (Twilio, United Airlines), closed 6 PoCs, raised $150K pre-seed. Team acquired by a Series A fintech in March 2024.
+          </p>
+        </div>
+
+        <!-- Dashh -->
+        <div class="group">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100">
+              Co-Founder — Dashh
+            </h3>
+            <span class="text-xs font-mono text-neutral-400">2021 — 2022</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1.5 leading-relaxed">
+            Built a 1-click checkout engine for e-commerce brands in 2.5 months with 2 engineers. Onboarded 10 brands, optimized merchant conversion rates, and turned down 2 acquihire offers.
+          </p>
+        </div>
+
+        <!-- PharmEasy -->
+        <div class="group">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 flex items-center gap-1.5">
+              <span>Senior Product Manager — PharmEasy</span>
+              <a href="https://pharmeasy.in" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">↗</a>
+            </h3>
+            <span class="text-xs font-mono text-neutral-400">2018 — 2021</span>
+          </div>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1.5 leading-relaxed">
+            Owned roadmap for Docon digital prescription platform (~1M prescriptions/month). Built doctor-facing analytics dashboards and prescription analytics for pharmaceutical enterprises.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side Projects & Craft -->
+    <section id="projects" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-2">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Craft & Side Projects
+        </h2>
+      </div>
+
+      <div class="p-5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Gatsby</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">macOS App</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50">v0.0.5</span>
+            </div>
+            <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1 font-mono">
+              Built with Rust (Tauri v2) + React + TypeScript + Tailwind
+            </p>
+          </div>
+
+          <a 
+            href="https://github.com/abhisheksingh0196/gatsby-releases/releases" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-xs font-medium px-3 py-1.5 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 hover:opacity-90 transition-opacity"
+          >
+            Download DMG ↗
+          </a>
+        </div>
+
+        <p class="text-sm text-neutral-600 dark:text-neutral-300 mt-3 leading-relaxed">
+          A hyper-minimalist, blisteringly fast e-book manager and Kindle companion app. Built exclusively for macOS to bypass Calibre's bloat: consumes ~40MB RAM and takes &lt;15MB disk space. Automatically fixes Amazon's missing Kindle cover bug via dynamic ASIN header patching and generates native APNX page numbers on the fly.
+        </p>
+
+        <div class="mt-4 pt-3 border-t border-neutral-200 dark:border-neutral-800/80 flex items-center justify-between text-xs text-neutral-500 dark:text-neutral-400">
+          <a href="/writing/building-gatsby-desktop-app" class="hover:text-black dark:hover:text-white transition-colors underline decoration-neutral-300 dark:decoration-neutral-700">
+            Read: Why I built Gatsby →
+          </a>
+          <a href="https://github.com/abhisheksingh0196/gatsby-releases" target="_blank" rel="noopener noreferrer" class="hover:text-black dark:hover:text-white transition-colors">
+            View on GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing / Essays -->
+    <section id="writing" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-2">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Selected Writing
+        </h2>
+        <a href="/writing" class="text-xs text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+          View all ({posts.length}) →
+        </a>
+      </div>
+
+      <div class="space-y-6">
+        {posts.map((post) => (
+          <article class="group">
+            <a href={`/writing/${post.id}`} class="block space-y-1">
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {post.data.title}
+                </h3>
+                <span class="text-xs font-mono text-neutral-400 shrink-0">
+                  {formatDate(post.data.pubDate)}
+                </span>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-2">
+                {post.data.description}
+              </p>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
