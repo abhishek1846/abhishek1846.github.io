@@ -7,15 +7,8 @@ import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('writing'))
   .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .sort((a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0))
   .slice(0, 2);
-
-const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    year: 'numeric'
-  }).format(date);
-};
 ---
 
 <Layout title="Abhishek Singh">
@@ -50,16 +43,13 @@ const formatDate = (date: Date) => {
 
       <div class="space-y-3">
         {posts.map((post) => (
-          <article class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 text-sm group">
+          <article class="text-sm">
             <a 
               href={`/writing/${post.id}`} 
-              class="text-neutral-800 dark:text-neutral-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors underline decoration-neutral-200 dark:decoration-neutral-800 group-hover:decoration-blue-500"
+              class="text-neutral-800 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors underline decoration-neutral-200 dark:decoration-neutral-800 hover:decoration-blue-500"
             >
               {post.data.title}
             </a>
-            <span class="text-xs font-mono text-neutral-400 shrink-0">
-              {formatDate(post.data.pubDate)}
-            </span>
           </article>
         ))}
       </div>
