@@ -9,7 +9,7 @@ For years, anyone reading e-books on a Kindle outside the Amazon walled garden h
 
 I wanted something different: a **hyper-minimalist, blisteringly fast e-book manager** built specifically for macOS. Something with a clean Linear-style interface that takes less than 15MB of disk space, uses ~40MB of RAM, and treats reading with the aesthetic simplicity it deserves.
 
-That was the genesis of **[Gatsby](https://github.com/abhisheksingh0196/gatsby-releases)**.
+That was the genesis of **[Gatsby](https://github.com/abhishek1846/gatsby-releases)**.
 
 ## The Architecture: Rust + Tauri + React
 

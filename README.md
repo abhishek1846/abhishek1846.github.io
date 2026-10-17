@@ -4,7 +4,7 @@ A hyper-minimalist, blisteringly fast personal portfolio and essay platform buil
 
 - **Total Bundle Size:** ~90 KB (Zero runtime client-side JavaScript by default)
 - **Design Philosophy:** Minimalist, typography-first, fast load times, dark/light mode toggle with zero layout flash.
-- **Hosting Target:** GitHub Pages (`https://abhisheksingh0196.github.io`).
+- **Hosting Target:** GitHub Pages (`https://abhishek1846.github.io`).
 
 ---
 
