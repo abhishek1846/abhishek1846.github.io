@@ -1,43 +1,64 @@
-# Astro Starter Kit: Minimal
+# Abhishek Singh — Personal Portfolio & Writing
 
-```sh
-npm create astro@latest -- --template minimal
+A hyper-minimalist, blisteringly fast personal portfolio and essay platform built with **Astro**, **Tailwind CSS v4**, and native Markdown content collections.
+
+- **Total Bundle Size:** ~90 KB (Zero runtime client-side JavaScript by default)
+- **Design Philosophy:** Minimalist, typography-first, fast load times, dark/light mode toggle with zero layout flash.
+- **Hosting Target:** GitHub Pages (`https://abhisheksingh0196.github.io`).
+
+---
+
+## Features
+
+- **Selected Work:** Interactive highlights of leadership roles at Oleria, Kloudfuse, Komma (Acquired), Dashh, PharmEasy, and ZS Associates with outbound links.
+- **Side Projects & Craft:** Featured showcase for **Gatsby** (minimal macOS e-book manager in Rust & Tauri) with direct DMG download links.
+- **Writing Platform:** Native Markdown content collection in `src/content/writing/`.
+- **Automated GitHub Pages CI/CD:** Ready-to-go GitHub Actions workflow in `.github/workflows/deploy.yml`.
+
+---
+
+## How to Add New Writing / Essays
+
+To publish a new essay or note, simply drop a new `.md` file inside `src/content/writing/`:
+
+```markdown
+---
+title: "Your Essay Title"
+description: "A 1-2 sentence description for preview cards and SEO."
+pubDate: 2026-10-18
+tags: ["Product", "AI", "Identity"]
+---
+
+Write your markdown content here. Supports headings, lists, blockquotes, code blocks, and markdown links!
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## Local Development
 
-Inside of your Astro project, you'll see the following folders and files:
+```bash
+# Start local dev server
+npm run dev
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+# Build production static bundle
+npm run build
+
+# Preview production build locally
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deploying to GitHub Pages
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Create a repository on GitHub named:
+   `abhisheksingh0196.github.io`
+2. Connect this local repository and push:
+   ```bash
+   git remote add origin https://github.com/abhisheksingh0196/abhisheksingh0196.github.io.git
+   git push -u origin main
+   ```
+3. In your GitHub repository settings:
+   - Go to **Settings** -> **Pages**.
+   - Under **Build and deployment**, select **Source: GitHub Actions**.
+4. The workflow will automatically build and deploy your site to `https://abhisheksingh0196.github.io`!
