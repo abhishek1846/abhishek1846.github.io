@@ -7,7 +7,6 @@ const { current = '' } = Astro.props;
 
 const navLinks = [
   { name: 'writing', href: '/writing' },
-  { name: 'work', href: '/work' },
   { name: 'projects', href: '/projects' },
   { name: 'books', href: '/books' },
   { name: 'uses', href: '/uses' },
@@ -17,7 +16,7 @@ const navLinks = [
 
 <header class="pt-2 pb-8 mb-12 border-b border-neutral-100 dark:border-neutral-900 transition-colors">
   <div class="flex items-center justify-between">
-    <!-- Clean, static, tasteful name -->
+    <!-- Clean, tasteful name -->
     <a 
       href="/" 
       class={`text-base font-medium tracking-tight transition-colors ${
@@ -29,7 +28,7 @@ const navLinks = [
       Abhishek Singh
     </a>
 
-    <!-- Uncluttered, spaced navigation links -->
+    <!-- Clean, uncluttered navigation links (writing, projects, books, uses, about) -->
     <div class="flex items-center space-x-5 sm:space-x-7 text-sm">
       <nav class="flex items-center space-x-5 sm:space-x-7">
         {navLinks.map((link) => {
