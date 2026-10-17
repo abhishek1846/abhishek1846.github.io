@@ -40,16 +40,6 @@ const slides = [
     href: "/about#meetup-bengaluru",
     type: "meetup",
   },
-  {
-    id: "meetup-builders",
-    tag: "Developer Meetup",
-    title: "Security Builders & Founders Meetup",
-    subtitle: "Discussion: Transitioning from 0-to-1 Founder to Enterprise Staff PM",
-    date: "2025",
-    linkText: "See meetup details →",
-    href: "/about#meetup-builders",
-    type: "meetup",
-  },
 ];
 ---
 
@@ -64,7 +54,7 @@ const slides = [
       </span>
     </div>
 
-    <!-- Manual Carousel Controls (Strictly click-driven, never auto-advancing) -->
+    <!-- Manual Carousel Controls (Click-driven only) -->
     <div class="flex items-center gap-1.5">
       <button 
         id="carousel-prev" 
@@ -90,9 +80,9 @@ const slides = [
   <!-- Carousel Viewport -->
   <div class="relative overflow-hidden rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50/60 dark:bg-neutral-900/40">
     <div id="carousel-track" class="flex transition-transform duration-300 ease-out">
-      {slides.map((slide, index) => (
+      {slides.map((slide) => (
         <div class="w-full shrink-0 p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
-          <!-- Visual Placeholder Card (Styled like a photo/paper cover) -->
+          <!-- Visual Placeholder Card -->
           <div class="w-full sm:w-48 h-36 shrink-0 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 flex flex-col justify-between p-3.5 shadow-xs relative">
             <div class="flex items-center justify-between">
               <span class="text-[10px] font-mono uppercase tracking-wider px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium">
@@ -167,11 +157,15 @@ const slides = [
       ))}
     </div>
   </div>
+
+  <p class="text-[11px] text-neutral-400 dark:text-neutral-500 text-right font-mono">
+    + other community talks & roundtables
+  </p>
 </div>
 
 <script>
   let currentSlide = 0;
-  const totalSlides = 5;
+  const totalSlides = 4;
 
   const track = document.getElementById('carousel-track');
   const counter = document.getElementById('carousel-current');
