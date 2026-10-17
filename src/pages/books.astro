@@ -7,43 +7,36 @@ const books = [
   {
     title: "The Martian",
     author: "Andy Weir",
-    rating: "5.0",
     recommend: true,
   },
   {
     title: "Project Hail Mary",
     author: "Andy Weir",
-    rating: "5.0",
     recommend: true,
   },
   {
     title: "Ask the Dust",
     author: "John Fante",
-    rating: "4.5",
     recommend: true,
   },
   {
     title: "James",
     author: "Percival Everett",
-    rating: "4.5",
     recommend: true,
   },
   {
     title: "Being Mortal",
     author: "Atul Gawande",
-    rating: "4.0",
     recommend: true,
   },
   {
     title: "Godan (गोदान)",
     author: "Premchand",
-    rating: "4.0",
     recommend: true,
   },
   {
     title: "Notes on Complexity",
     author: "Neil Theise",
-    rating: "4.0",
     recommend: true,
   },
   {
@@ -54,55 +47,46 @@ const books = [
   {
     title: "Ghachar Ghochar",
     author: "Vivek Shanbhag",
-    rating: "3.5",
     recommend: true,
   },
   {
     title: "The Unbearable Lightness of Being",
     author: "Milan Kundera",
-    rating: "3.5",
     recommend: true,
   },
   {
     title: "The Moon and Sixpence",
     author: "W. Somerset Maugham",
-    rating: "3.0",
     recommend: true,
   },
   {
     title: "Pedro Páramo",
     author: "Juan Rulfo",
-    rating: "3.0",
     recommend: true,
   },
   {
     title: "Notes from Underground",
     author: "Fyodor Dostoyevsky",
-    rating: "3.0",
     recommend: true,
   },
   {
     title: "Awara Bheed Ke Khatare",
     author: "Harishankar Parsai",
-    rating: "3.0",
     recommend: false,
   },
   {
     title: "Common Stocks and Common Sense",
     author: "Edgar Wachenheim, III",
-    rating: "2.5",
     recommend: false,
   },
   {
     title: "A Matter of Rats: A Short Biography of Patna",
     author: "Amitava Kumar",
-    rating: "2.0",
     recommend: false,
   },
   {
     title: "What is Life?",
     author: "Erwin Schrödinger",
-    rating: "1.5",
     recommend: false,
   },
 ];
@@ -110,7 +94,7 @@ const books = [
 
 <Layout 
   title="Books & Reading | Abhishek Singh"
-  description="Books read by Abhishek Singh with ratings and recommendations."
+  description="Books read by Abhishek Singh with recommendations."
 >
   <Header current="books" />
 
@@ -145,11 +129,6 @@ const books = [
               {book.title} <span class="text-neutral-400 dark:text-neutral-500 font-normal">by {book.author}</span>
             </h3>
             <div class="flex items-center gap-2 shrink-0">
-              {book.rating && (
-                <span class="text-xs font-mono text-neutral-400 dark:text-neutral-500">
-                  {book.rating}
-                </span>
-              )}
               <span class={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
                 book.recommend 
                   ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/40' 
