@@ -4,54 +4,122 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const books = [
+  // Currently Reading
   {
-    title: "A Fine Balance",
-    author: "Rohinton Mistry",
-    genre: "Literature / Fiction",
+    title: "Zero: The Biography of a Dangerous Idea",
+    author: "Charles Seife",
+    genre: "Mathematics",
     status: "Reading",
-    notes: "A sprawling, heartbreaking masterpiece about human dignity, unlikely friendship, and resilience during the Emergency in India.",
   },
   {
-    title: "The Myth of Sisyphus",
-    author: "Albert Camus",
+    title: "Dear Life",
+    author: "Alice Munro",
+    genre: "Fiction",
+    status: "Reading",
+  },
+  {
+    title: "Kolyma Tales",
+    author: "Varlam Shalamov",
+    genre: "Memoir",
+    status: "Reading",
+  },
+  // Read
+  {
+    title: "The Martian",
+    author: "Andy Weir",
+    genre: "Sci-Fi",
+    status: "Read",
+  },
+  {
+    title: "Project Hail Mary",
+    author: "Andy Weir",
+    genre: "Sci-Fi",
+    status: "Read",
+  },
+  {
+    title: "Being Mortal",
+    author: "Atul Gawande",
+    genre: "Medicine",
+    status: "Read",
+  },
+  {
+    title: "Notes on Complexity",
+    author: "Neil Theise",
+    genre: "Science",
+    status: "Read",
+  },
+  {
+    title: "James",
+    author: "Percival Everett",
+    genre: "Fiction",
+    status: "Read",
+  },
+  {
+    title: "The Unbearable Lightness of Being",
+    author: "Milan Kundera",
     genre: "Philosophy",
-    status: "Completed",
-    notes: "A fundamental philosophical inquiry into absurdism, freedom, and the necessity of finding meaning and revolt in everyday existence.",
+    status: "Read",
   },
   {
-    title: "Amusing Ourselves to Death",
-    author: "Neil Postman",
-    genre: "Media & Culture",
-    status: "Completed",
-    notes: "Prophetic critique of how medium shapes discourse. Even more relevant in the age of algorithmic feeds and short-form video than when it was written in 1985.",
+    title: "Ghachar Ghochar",
+    author: "Vivek Shanbhag",
+    genre: "Fiction",
+    status: "Read",
   },
   {
-    title: "The Evolution of Everything: How New Ideas Emerge",
-    author: "Matt Ridley",
-    genre: "Economics & Science",
-    status: "Completed",
-    notes: "Argues that top-down design is an illusion. Culture, technology, and language evolve bottom-up on their own.",
+    title: "Ask the Dust",
+    author: "John Fante",
+    genre: "Fiction",
+    status: "Read",
   },
   {
-    title: "Piranesi",
-    author: "Susanna Clarke",
-    genre: "Speculative Fiction",
-    status: "Completed",
-    notes: "An ethereal, quiet exploration of wonder, isolation, and innocence set inside an infinite House of labyrinthine halls and ocean tides.",
+    title: "The Moon and Sixpence",
+    author: "W. Somerset Maugham",
+    genre: "Classics",
+    status: "Read",
   },
   {
-    title: "Stiff: The Curious Lives of Human Cadavers",
-    author: "Mary Roach",
-    genre: "Science / History",
-    status: "Completed",
-    notes: "Macabre yet strangely reverent and witty exploration of what happens to the human body when donated to science across centuries.",
+    title: "Pedro Páramo",
+    author: "Juan Rulfo",
+    genre: "Fiction",
+    status: "Read",
+  },
+  {
+    title: "Notes from Underground",
+    author: "Fyodor Dostoyevsky",
+    genre: "Classics",
+    status: "Read",
+  },
+  {
+    title: "Godan (गोदान)",
+    author: "Premchand",
+    genre: "Hindi Literature",
+    status: "Read",
+  },
+  {
+    title: "Awara Bheed Ke Khatare",
+    author: "Harishankar Parsai",
+    genre: "Satire",
+    status: "Read",
+  },
+  {
+    title: "A Matter of Rats: A Short Biography of Patna",
+    author: "Amitava Kumar",
+    genre: "Memoir",
+    status: "Read",
+  },
+  {
+    title: "What is Life?",
+    author: "Erwin Schrödinger",
+    genre: "Science",
+    status: "Read",
   },
 ];
 ---
 
 <Layout 
   title="Books & Reading | Abhishek Singh"
-  description="Books Abhishek Singh is reading across world literature, philosophy, and political economy."
+  description="Books read by Abhishek Singh across fiction, science, philosophy, and Indian literature."
 >
   <Header current="books" />
 
@@ -61,48 +129,42 @@ const books = [
         Books & Reading
       </h1>
       <p class="text-sm text-neutral-600 dark:text-neutral-400">
-        Notes on what I'm reading across world literature, political economy, philosophy, and history.
+        A selection of books from my reading log. I have read a lot more and will keep adding to this list over time.
       </p>
     </div>
 
-    <!-- Reading Philosophy / Rig -->
+    <!-- Reading Habit / Rig -->
     <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/60 dark:bg-neutral-900/30 text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed space-y-1.5">
       <p class="font-medium text-neutral-900 dark:text-neutral-200">How I read:</p>
       <p>
-        I read primarily on a Kindle e-reader. Because I hated the bloated software ecosystem for sideloading books, I built <a href="/projects" class="underline hover:text-black dark:hover:text-white">Gatsby</a> to manage my library, fix Kindle cover thumbnail bugs, and generate page numbers on the fly.
+        I read across paperbacks and e-ink (Kindle Paperwhite, Xteink). When reading digital e-books, I use <a href="/projects" class="underline hover:text-black dark:hover:text-white">Gatsby</a> to keep my offline library organized. I also occasionally listen to audiobooks.
       </p>
     </div>
 
     <!-- Books List -->
-    <div class="space-y-6">
+    <div class="space-y-4">
       <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 border-b border-neutral-200 dark:border-neutral-800 pb-2">
-        Recent Books & Reflections
+        Reading Log
       </h2>
 
       <div class="divide-y divide-neutral-200 dark:divide-neutral-800">
         {books.map((book) => (
-          <div class="py-5 first:pt-0 space-y-2">
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-              <h3 class="text-base font-medium text-neutral-900 dark:text-neutral-100">
-                {book.title} <span class="text-neutral-400 font-normal">by {book.author}</span>
-              </h3>
-              <div class="flex items-center gap-2">
-                <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
-                  {book.genre}
-                </span>
-                <span class={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
-                  book.status === 'Reading' 
-                    ? 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800' 
-                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-500'
-                }`}>
-                  {book.status}
-                </span>
-              </div>
+          <div class="py-3.5 first:pt-0 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5">
+            <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100">
+              {book.title} <span class="text-neutral-400 dark:text-neutral-500 font-normal">by {book.author}</span>
+            </h3>
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
+                {book.genre}
+              </span>
+              <span class={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
+                book.status === 'Reading' 
+                  ? 'bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800' 
+                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-500'
+              }`}>
+                {book.status}
+              </span>
             </div>
-            
-            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
-              {book.notes}
-            </p>
           </div>
         ))}
       </div>
