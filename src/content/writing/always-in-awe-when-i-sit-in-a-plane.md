@@ -1,26 +1,26 @@
 ---
 title: "I'm always in awe when I sit in an plane"
-description: "Why flying thirty-five thousand feet in the air will never stop being a miracle to me."
+description: "Why flying thirty-five thousand feet in the air will never stop feeling magical to me."
 pubDate: 2026-10-18T04:00:00.000Z
 draft: true
 ---
 
 Every time I board an airplane, I look at the people around me. 
 
-Almost everyone looks miserable. People roll their eyes at the boarding queue. They argue over space in the overhead bins. Once seated, they sigh, put on their noise-canceling headphones, and complain if the in-flight Wi-Fi takes two extra minutes to load an email.
+Almost everyone looks exhausted or irritated. People roll their eyes at the boarding line. They argue over space in the overhead bins. Once seated, they sigh, put on their headphones, and complain if the Wi-Fi takes two extra minutes to load an email.
 
-I understand the frustration of airports, but I can never bring myself to share the cynicism.
+I understand that airports are annoying, but I can never bring myself to feel cynical once the plane starts moving.
 
-Think about what is actually happening. You step inside a pressurized metal cylinder. Two engines ignite with the power of thousands of horses. The aircraft accelerates down a strip of concrete and lifts ninety tons of steel into the sky.
+No matter how many times I fly, it still feels magical.
 
-A few minutes later, you are cruising at thirty-five thousand feet.
+Think about what humans have managed to pull off here. You step inside a pressurized tube. The engines roar, the aircraft accelerates down a strip of concrete, and ninety tons of metal simply leaves the earth. Gravity gets overcome by pure human ingenuity.
 
-Outside your tiny oval window, the temperature is fifty degrees below zero. The air is so thin your lungs could not survive it for two minutes. Yet inside, you sit in air-conditioned comfort, drinking warm coffee and reading a book. 
+A few minutes later, you are cruising thirty-five thousand feet above the ground.
 
-Beneath you are vast mountain ranges, rivers that look like thin silver threads, and oceans of white clouds stretching into the horizon. Distances that took our ancestors six grueling months by horse or wooden ship are erased in four hours.
+Outside your window, the air is thin enough to kill you and the temperature is fifty degrees below zero. Yet inside, you sit comfortably in your seat, sipping a drink and reading a book. Beneath you, mountain ranges look like tiny ripples and clouds stretch out like endless white fields.
 
-Around 1846, humanity was just figuring out that surgery could be performed without patients screaming in agony. The idea of traveling between continents before sunset would have sounded like witchcraft.
+For almost all of human history, humans were bound to the ground. If you wanted to cross a continent or an ocean, you spent months enduring danger and exhaustion. Today, thousands of people board a plane, fall asleep for a few hours, and wake up on the other side of the planet.
 
-Now we do it every single day. We treat one of the greatest engineering feats in human history as an inconvenience.
+We built this out of nothing but physics, engineering, and collective willpower.
 
-Whenever the plane banks into a turn and the world tilts beneath the wing, I look out the window. I hope I never get too tired or too busy to feel astonished by it.
+Whenever the plane banks into a turn and the world tilts beneath the wing, I look out the window. I hope I never get so used to modern life that I stop feeling stunned by what humans have achieved.
