@@ -12,7 +12,6 @@ const posts = (await getCollection('writing'))
 const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('en-US', {
     month: 'short',
-    day: 'numeric',
     year: 'numeric'
   }).format(date);
 };
@@ -22,170 +21,78 @@ const formatDate = (date: Date) => {
   <Header current="home" />
 
   <main class="space-y-12">
-    <!-- Intro -->
-    <section class="space-y-4">
-      <h1 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
-        Hi, I'm Abhishek.
+    <!-- Calm Personal Intro -->
+    <section class="space-y-3">
+      <h1 class="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+        Abhishek Singh
       </h1>
-      <p class="text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-        I am a Staff Product Manager and two-time founder based in Bengaluru. Currently leading product for 
-        <span class="text-neutral-900 dark:text-white font-medium">Non-Human Identity (NHI) & AI Agent Governance</span> at 
-        <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 hover:decoration-neutral-900 dark:decoration-neutral-700 dark:hover:decoration-neutral-200">Oleria</a>.
-      </p>
       <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-        I focus on enterprise identity security, agentic software systems, and building zero-bloat desktop tools.
+        Staff Product Manager at <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white">Oleria</a> leading product for Non-Human Identity (NHI) and AI Agent Governance. Two-time founder (<a href="/about" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white">Komma</a>, Dashh). Based in Bengaluru.
       </p>
     </section>
 
-    <!-- Click-only Photo / Paper / Talks Carousel linking to About -->
+    <!-- Photo, Paper & Talks Carousel -->
     <section>
       <PhotoCarousel />
     </section>
 
-    <!-- Experience & Background (Current role & Founder experience emphasized, zero timelines) -->
+    <!-- Recent Writing (Simple, calm text list without heavy card boxes) -->
     <section class="space-y-4">
       <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
         <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
-          Work & Founder Experience
+          Writing
         </h2>
-        <a 
-          href="/resume.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="text-xs font-mono text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white underline decoration-neutral-300 dark:decoration-neutral-700 transition-colors"
-        >
-          Full Resume (PDF) ↗
-        </a>
-      </div>
-
-      <div class="space-y-4 text-sm">
-        <!-- Current -->
-        <div class="space-y-1">
-          <div class="flex items-baseline justify-between">
-            <span class="font-semibold text-neutral-900 dark:text-neutral-100">
-              Oleria <span class="font-normal text-xs text-neutral-500 font-mono">— Staff Product Manager</span>
-            </span>
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900/40 font-medium">Current</span>
-          </div>
-          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Leading product across ~30 engineers for Non-Human Identity (NHI) and autonomous AI Agent Governance. Scaled integration catalog from 20 to 100+ connected applications.
-          </p>
-        </div>
-
-        <!-- Founder Stints -->
-        <div class="space-y-1 pt-2 border-t border-neutral-100 dark:border-neutral-900">
-          <div class="flex items-baseline justify-between">
-            <span class="font-semibold text-neutral-900 dark:text-neutral-100">
-              Komma <span class="font-normal text-xs text-neutral-500 font-mono">— Co-Founder & CEO</span>
-            </span>
-            <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">Acquired</span>
-          </div>
-          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Built collaborative analytics notebooks for data teams. Interviewed 150+ data leaders, closed 6 enterprise PoCs, raised Pre-Seed round. Acquired by Series A fintech.
-          </p>
-        </div>
-
-        <div class="space-y-1">
-          <div class="flex items-baseline justify-between">
-            <span class="font-semibold text-neutral-900 dark:text-neutral-100">
-              Dashh <span class="font-normal text-xs text-neutral-500 font-mono">— Co-Founder</span>
-            </span>
-          </div>
-          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Built 1-click checkout engine for e-commerce brands in 2.5 months with 2 engineers; live on 10 brands, received 2 acquihire offers.
-          </p>
-        </div>
-
-        <!-- Previous Involvements (No timelines) -->
-        <div class="pt-3 border-t border-neutral-100 dark:border-neutral-900 space-y-2">
-          <p class="text-xs font-mono text-neutral-400">Other past involvements:</p>
-          <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
-            Previously opened India presence and GTM at <span class="font-medium text-neutral-900 dark:text-neutral-200">Kloudfuse</span> (onboarding 1mg, Innovacer, GE Health); owned digital prescription products at <span class="font-medium text-neutral-900 dark:text-neutral-200">PharmEasy</span> (Docon, 1M+ Rx/month); started career in decision analytics at <span class="font-medium text-neutral-900 dark:text-neutral-200">ZS Associates</span>.
-          </p>
-          <div class="pt-1">
-            <a href="/about" class="text-xs text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white font-medium">
-              Read more about my story on About →
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Project: Gatsby -->
-    <section class="space-y-4">
-      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
-        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
-          Featured Project
-        </h2>
-        <a href="/projects" class="text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-          All projects →
-        </a>
-      </div>
-
-      <div class="p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white dark:bg-neutral-900/40 hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors">
-        <div class="flex items-start justify-between gap-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-base font-semibold text-neutral-900 dark:text-neutral-100">Gatsby</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">macOS App</span>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900/40">v0.0.5</span>
-            </div>
-            <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1 font-mono">
-              Rust (Tauri v2) • React • TypeScript
-            </p>
-          </div>
-          <a 
-            href="https://github.com/abhisheksingh0196/gatsby-releases/releases" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="text-xs font-medium px-3 py-1.5 rounded-md bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 hover:opacity-90 transition-opacity"
-          >
-            Download DMG ↗
-          </a>
-        </div>
-        <p class="text-sm text-neutral-600 dark:text-neutral-300 mt-3 leading-relaxed">
-          A hyper-minimalist e-book manager built exclusively for macOS. Bypasses Calibre's bloat (consumes ~40MB RAM) and solves Kindle cover thumbnail and APNX page number bugs automatically.
-        </p>
-        <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs text-neutral-500">
-          <a href="/writing/building-gatsby-desktop-app" class="hover:text-black dark:hover:text-white transition-colors underline decoration-neutral-300 dark:decoration-neutral-700">
-            Why I built Gatsby →
-          </a>
-          <a href="https://github.com/abhisheksingh0196/gatsby-releases" target="_blank" rel="noopener noreferrer" class="hover:text-black dark:hover:text-white transition-colors">
-            GitHub ↗
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Recent Writing -->
-    <section class="space-y-4">
-      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
-        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
-          Recent Writing
-        </h2>
-        <a href="/writing" class="text-xs text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+        <a href="/writing" class="text-xs text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
           All essays →
         </a>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3">
         {posts.map((post) => (
-          <article class="group">
-            <a href={`/writing/${post.id}`} class="block space-y-1">
-              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  {post.data.title}
-                </h3>
-                <span class="text-xs font-mono text-neutral-400 shrink-0">
-                  {formatDate(post.data.pubDate)}
-                </span>
-              </div>
-              <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed line-clamp-2">
-                {post.data.description}
-              </p>
+          <article class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 text-sm group">
+            <a 
+              href={`/writing/${post.id}`} 
+              class="text-neutral-800 dark:text-neutral-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors underline decoration-neutral-200 dark:decoration-neutral-800 group-hover:decoration-blue-500"
+            >
+              {post.data.title}
             </a>
+            <span class="text-xs font-mono text-neutral-400 shrink-0">
+              {formatDate(post.data.pubDate)}
+            </span>
           </article>
         ))}
+      </div>
+    </section>
+
+    <!-- Projects (Simple clean line) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
+        <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
+          Projects
+        </h2>
+        <a href="/projects" class="text-xs text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
+          All projects →
+        </a>
+      </div>
+
+      <div class="text-sm text-neutral-600 dark:text-neutral-400 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+        <div class="flex items-center gap-2">
+          <a 
+            href="/projects" 
+            class="font-medium text-neutral-900 dark:text-neutral-100 underline decoration-neutral-200 dark:decoration-neutral-800 hover:decoration-black dark:hover:decoration-white"
+          >
+            Gatsby
+          </a>
+          <span>— Hyper-minimalist macOS e-book manager in Rust & Tauri</span>
+        </div>
+        <a 
+          href="https://github.com/abhisheksingh0196/gatsby-releases/releases" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-xs font-mono text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 shrink-0"
+        >
+          v0.0.5 DMG ↗
+        </a>
       </div>
     </section>
   </main>
