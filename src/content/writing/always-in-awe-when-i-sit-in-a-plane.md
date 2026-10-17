@@ -7,13 +7,13 @@ draft: true
 
 Every time I board an airplane, I look at the people around me. 
 
-Almost everyone looks exhausted or irritated. People roll their eyes at the boarding line. They argue over space in the overhead bins. Once seated, they sigh, put on their headphones, and complain if the Wi-Fi takes two extra minutes to load an email.
+Almost everyone looks exhausted or irritated. People roll their eyes at the boarding line. They argue over space in the overhead bins. Once seated, they sigh, put on their headphones, and grumble if there is a ten-minute delay before takeoff.
 
 I understand that airports are annoying, but I can never bring myself to feel cynical once the plane starts moving.
 
 No matter how many times I fly, it still feels magical.
 
-Think about what humans have managed to pull off here. You step inside a pressurized tube. The engines roar, the aircraft accelerates down a strip of concrete, and ninety tons of metal simply leaves the earth. Gravity gets overcome by pure human ingenuity.
+Think about what humans have managed to pull off here. You step inside a pressurized tube. The engines roar, the aircraft accelerates down a strip of concrete, and ninety tons of metal lifts off the tarmac. Gravity gets overcome by pure human ingenuity.
 
 A few minutes later, you are cruising thirty-five thousand feet above the ground.
 
