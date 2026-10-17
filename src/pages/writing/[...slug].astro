@@ -52,16 +52,6 @@ const formatDate = (date: Date) => {
         <span>•</span>
         <span>Abhishek Singh</span>
       </div>
-
-      {post.data.tags && post.data.tags.length > 0 && (
-        <div class="flex flex-wrap gap-1.5 pt-1">
-          {post.data.tags.map((tag: string) => (
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
-              #{tag}
-            </span>
-          ))}
-        </div>
-      )}
     </header>
 
     <!-- Post Content -->
