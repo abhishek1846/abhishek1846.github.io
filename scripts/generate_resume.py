@@ -222,12 +222,14 @@ def build_pdf(filename):
     story.append(make_bullet("Worked directly with US clients; the only first-year associate on the team to train new joiners."))
     story.append(Spacer(1, 4))
 
-    # Education and Publications on the SAME LINE
+    # Education and Publications on separate lines
     story.append(Paragraph("EDUCATION AND PUBLICATIONS", section_title_style))
     story.append(hr())
-    story.append(Paragraph(
-        f'<b>IIT (BHU), Varanasi</b> (2012 - 2017) &nbsp;|&nbsp; Co-author, <a href="https://www.dsci.in/resource/content/identity-security-maturity-ai-era" color="{link_color}"><i>Identity Security Maturity in the AI Era</i></a>, DSCI (with Oleria)',
-        body_text_style
+    story.append(make_header_row("<b>IIT (BHU), Varanasi</b>", "2012 - 2017"))
+    story.append(Spacer(1, 3.5))
+    story.append(make_header_row(
+        f'<b>Co-author, <a href="https://www.dsci.in/resource/content/identity-security-maturity-ai-era" color="{link_color}"><i>Identity Security Maturity in the AI Era</i></a></b>',
+        "DSCI (with Oleria)"
     ))
 
     doc.build(story)
