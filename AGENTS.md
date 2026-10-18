@@ -27,3 +27,4 @@ Consult these guides before working on related tasks:
 - Never write long sentences with too many commas. Keep sentences clean and easy to follow.
 - Never use 3-word phrase triplets or cliché copywriting triads.
 - Write naturally like a human.
+- Proactively suggest better approaches and push back when a design or technical decision is sub-optimal.
