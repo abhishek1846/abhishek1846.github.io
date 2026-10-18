@@ -20,4 +20,4 @@ This changes the entire security equation:
 - Traditional identity looks at human session tokens. Agent security looks at autonomous service accounts with broad, unmonitored scopes.
 - Traditional audits review access quarterly. Agents make dozens of API calls every minute without any human in the loop.
 
-Real AI security is not about alignment theory. It is about blast radius control. It is about making sure an automated assistant cannot delete a production database just because a poorly formatted prompt told it to clean up temporary files.
+Agent security comes down to blast radius control. An automated assistant should never be able to delete a production database just because an untrusted prompt told it to clean up temporary files.
