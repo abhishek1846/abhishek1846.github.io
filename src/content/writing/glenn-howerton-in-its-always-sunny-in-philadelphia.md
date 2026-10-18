@@ -1,14 +1,14 @@
 ---
-title: "Glenn Howerton in it's always sunny in philadelphia - might have the best comedic timing when getting angry"
-description: "Why Dennis Reynolds' controlled descent into rage is an absolute masterclass in comic acting."
+title: "Glenn Howerton in It's Always Sunny in Philadelphia might have the best comedic timing when getting angry"
+description: "Why Dennis Reynolds' controlled escalation into rage is an absolute masterclass in comic acting."
 pubDate: 2026-10-18T05:00:00.000Z
 ---
 
-Playing angry is deceptively hard in comedy. Most actors rely on volume. They shout their lines, wave their arms around, and hope the noise passes for humor.
+Playing angry is deceptively hard in comedy. Anyone can scream, but turning rage into great comedy requires incredible rhythm and control.
 
-Glenn Howerton approaches anger with incredible precision.
+Glenn Howerton's performance as Dennis Reynolds in *It's Always Sunny in Philadelphia* is a masterclass in that escalation.
 
-His character, Dennis Reynolds, is a sociopath convinced of his own perfection. What makes Howerton's performance unforgettable is not the screaming. It is the buildup before the scream.
+Dennis is a narcissist convinced of his own perfection. What makes his anger so funny is the deliberate, slow burn before the inevitable explosion.
 
 Dennis usually starts a scene entirely in control. His posture is rigid. His voice is measured, almost soothing. He speaks with the smooth confidence of a man who believes the universe owes him total obedience.
 
