@@ -17,6 +17,8 @@ def build_pdf(filename):
         bottomMargin=32
     )
 
+    link_color = "#1d4ed8"
+
     name_style = ParagraphStyle(
         'Name',
         fontName='Helvetica-Bold',
@@ -133,12 +135,12 @@ def build_pdf(filename):
 
     story = []
 
-    # 1. Header with hyperlinked personal portfolio and LinkedIn
+    # 1. Header with hyperlinked personal portfolio and LinkedIn in subtle blue
     story.append(Paragraph("Abhishek Singh", name_style))
     story.append(Paragraph("Staff Product Manager | AI-powered B2B SaaS: identity security, data and analytics | Bengaluru, India", header_sub_style))
     story.append(Paragraph(
-        '<a href="https://abhishek1846.github.io" color="#0f172a">abhishek1846.github.io</a> &nbsp;|&nbsp; '
-        '<a href="https://www.linkedin.com/in/abhishek1846" color="#0f172a">linkedin.com/in/abhishek1846</a>',
+        f'<a href="https://abhishek1846.github.io" color="{link_color}">abhishek1846.github.io</a> &nbsp;|&nbsp; '
+        f'<a href="https://www.linkedin.com/in/abhishek1846" color="{link_color}">linkedin.com/in/abhishek1846</a>',
         header_sub_style
     ))
     story.append(Spacer(1, 2))
@@ -160,7 +162,7 @@ def build_pdf(filename):
     story.append(hr())
 
     # Oleria
-    story.append(make_header_row("<b>Oleria</b>", "May 2025 - Present"))
+    story.append(make_header_row(f'<b><a href="https://oleria.com" color="{link_color}">Oleria</a></b>', "May 2025 - Present"))
 
     role_sub_table = Table([[
         Paragraph("<b>Staff Product Manager</b> (Aug 2026 - Present) &nbsp;&nbsp;|&nbsp;&nbsp; <b>Senior Product Manager</b> (May 2025 - Aug 2026)", body_text_style),
@@ -193,7 +195,7 @@ def build_pdf(filename):
     story.append(Spacer(1, 4))
 
     # Kloudfuse
-    story.append(make_header_row("<b>Kloudfuse - Product/Growth Lead, India</b>", "Apr 2024 - May 2025"))
+    story.append(make_header_row(f'<b><a href="https://kloudfuse.com" color="{link_color}">Kloudfuse</a></b> - Product/Growth Lead, India', "Apr 2024 - May 2025"))
     story.append(Spacer(1, 1))
     story.append(make_bullet("Opened the India market; onboarded 1mg, Innovacer and GE Health."))
     story.append(make_bullet("Led the launch of Real User Monitoring (RUM) and other product updates."))
@@ -208,25 +210,23 @@ def build_pdf(filename):
     story.append(Spacer(1, 4))
 
     # PharmEasy
-    story.append(make_header_row("<b>PharmEasy - Senior Product Manager</b>", "Nov 2018 - Nov 2021"))
+    story.append(make_header_row(f'<b><a href="https://pharmeasy.in" color="{link_color}">PharmEasy</a></b> - Senior Product Manager', "Nov 2018 - Nov 2021"))
     story.append(Spacer(1, 1))
     story.append(make_bullet("Owned the roadmap for Docon, a digital prescription platform acquired by PharmEasy: about 1M prescriptions per month, feeding its e-pharmacy and diagnostics businesses."))
     story.append(make_bullet("Additionally built prescription analytics for pharma companies and doctor-facing analytics dashboards."))
     story.append(Spacer(1, 4))
 
     # ZS Associates
-    story.append(make_header_row("<b>ZS Associates - Decision Analytics Associate</b>", "Jun 2017 - Oct 2018"))
+    story.append(make_header_row(f'<b><a href="https://zs.com" color="{link_color}">ZS Associates</a></b> - Decision Analytics Associate', "Jun 2017 - Oct 2018"))
     story.append(Spacer(1, 1))
     story.append(make_bullet("Worked directly with US clients; the only first-year associate on the team to train new joiners."))
     story.append(Spacer(1, 4))
 
-    # Education and Publications
+    # Education and Publications on the SAME LINE
     story.append(Paragraph("EDUCATION AND PUBLICATIONS", section_title_style))
     story.append(hr())
-    story.append(make_header_row("<b>IIT (BHU), Varanasi</b>", "2012 - 2017"))
-    story.append(Spacer(1, 1))
     story.append(Paragraph(
-        'Co-author, <a href="https://www.dsci.in/resource/content/identity-security-maturity-ai-era" color="#0f172a"><i>Identity Security Maturity in the AI Era</i></a>, Data Security Council of India (DSCI)',
+        f'<b>IIT (BHU), Varanasi</b> (2012 - 2017) &nbsp;|&nbsp; Co-author, <a href="https://www.dsci.in/resource/content/identity-security-maturity-ai-era" color="{link_color}"><i>Identity Security Maturity in the AI Era</i></a>, DSCI (with Oleria)',
         body_text_style
     ))
 
