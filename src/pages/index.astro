@@ -46,6 +46,7 @@ const posts = (await getCollection('writing'))
           <article class="text-sm">
             <a 
               href={`/writing/${post.id}`} 
+              data-astro-prefetch="load"
               class="text-neutral-800 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors underline decoration-neutral-200 dark:decoration-neutral-800 hover:decoration-blue-500"
             >
               {post.data.title}

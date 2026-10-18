@@ -183,7 +183,13 @@ const slides = [
 </div>
 
 <script>
+  let carouselController: AbortController | null = null;
+
   function setupCarousel() {
+    carouselController?.abort();
+    carouselController = new AbortController();
+    const { signal } = carouselController;
+
     let currentSlide = 0;
     const totalSlides = 4;
 
@@ -204,12 +210,12 @@ const slides = [
     prevBtn?.addEventListener('click', () => {
       currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
       updateCarousel();
-    });
+    }, { signal });
 
     nextBtn?.addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % totalSlides;
       updateCarousel();
-    });
+    }, { signal });
   }
 
   document.addEventListener('astro:page-load', setupCarousel);

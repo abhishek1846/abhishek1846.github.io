@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://abhishek1846.github.io',
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'viewport',
+    defaultStrategy: 'hover',
   },
   vite: {
     plugins: [tailwindcss()],

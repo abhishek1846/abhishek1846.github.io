@@ -66,24 +66,91 @@ const {
     <script>
       import { navigate } from 'astro:transitions/client';
 
-      // Background keyboard shortcuts (1: Home, 2: Writing, 3: Work, 4: Projects, 5: Books, 6: Uses, 7: About)
-      document.addEventListener('keydown', (e) => {
-        if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
-        if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // High-performance in-memory HTML cache for instant (0ms) page swaps
+      const pageCache = new Map<string, string>();
 
-        const routes: Record<string, string> = {
-          '1': '/',
-          '2': '/writing',
-          '3': '/projects',
-          '4': '/books',
-          '5': '/uses',
-          '6': '/about',
-        };
+      async function prefetchToMemory(href: string) {
+        try {
+          const url = new URL(href, window.location.href);
+          if (url.origin !== window.location.origin) return;
+          const cleanKey = url.pathname.replace(/\/$/, '') || '/';
+          if (pageCache.has(cleanKey)) return;
 
-        if (routes[e.key] && window.location.pathname !== routes[e.key]) {
-          navigate(routes[e.key]);
-        }
+          const res = await fetch(url.href, { priority: 'low' });
+          if (res.ok && (res.headers.get('content-type') || '').includes('text/html')) {
+            const html = await res.text();
+            pageCache.set(cleanKey, html);
+          }
+        } catch {}
+      }
+
+      // Serve instantly from in-memory cache during View Transitions
+      document.addEventListener('astro:before-preparation', (event: any) => {
+        try {
+          const url = new URL(event.to.href, window.location.href);
+          const cleanKey = url.pathname.replace(/\/$/, '') || '/';
+          const cached = pageCache.get(cleanKey);
+          if (cached) {
+            event.loader = async () => {
+              event.newDocument = new DOMParser().parseFromString(cached, 'text/html');
+            };
+          }
+        } catch {}
       });
+
+      // Speculative prefetching on hover, touch, and focus
+      function attachPrefetchListeners() {
+        const links = document.querySelectorAll<HTMLAnchorElement>('a[href^="/"], a[href^="' + window.location.origin + '"]');
+        links.forEach((link) => {
+          const href = link.getAttribute('href');
+          if (!href || href.startsWith('#') || link.hasAttribute('download') || href.endsWith('.pdf')) return;
+
+          const handler = () => prefetchToMemory(link.href);
+          link.addEventListener('pointerenter', handler, { passive: true, once: true });
+          link.addEventListener('pointerdown', handler, { passive: true, once: true });
+          link.addEventListener('focusin', handler, { passive: true, once: true });
+        });
+      }
+
+      // Background idle warming: prefetch all links visible on the page
+      function warmUpIdle() {
+        attachPrefetchListeners();
+        const requestIdle = (window as any).requestIdleCallback || ((cb: Function) => setTimeout(cb, 60));
+        requestIdle(() => {
+          const links = document.querySelectorAll<HTMLAnchorElement>('a[href^="/"]');
+          links.forEach((link) => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('#') && !link.hasAttribute('download') && !href.endsWith('.pdf')) {
+              prefetchToMemory(link.href);
+            }
+          });
+        });
+      }
+
+      warmUpIdle();
+      document.addEventListener('astro:page-load', attachPrefetchListeners);
+
+      // Keyboard shortcuts (1: Home, 2: Writing, 3: Work, 4: Projects, 5: Books, 6: Uses, 7: About)
+      if (!(window as any).__portfolioKeydownInit) {
+        (window as any).__portfolioKeydownInit = true;
+        document.addEventListener('keydown', (e) => {
+          if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
+          if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+          const routes: Record<string, string> = {
+            '1': '/',
+            '2': '/writing',
+            '3': '/projects',
+            '4': '/books',
+            '5': '/uses',
+            '6': '/about',
+          };
+
+          if (routes[e.key] && window.location.pathname !== routes[e.key]) {
+            navigate(routes[e.key]);
+          }
+        });
+      }
     </script>
   </body>
 </html>

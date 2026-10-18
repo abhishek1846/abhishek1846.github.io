@@ -19,6 +19,7 @@ const navLinks = [
     <!-- Clean, tasteful name -->
     <a 
       href="/" 
+      data-astro-prefetch="hover"
       class={`text-base font-medium tracking-tight transition-colors ${
         current === 'home' || current === ''
           ? 'text-neutral-900 dark:text-neutral-100'
@@ -36,6 +37,7 @@ const navLinks = [
           return (
             <a 
               href={link.href}
+              data-astro-prefetch="hover"
               class={`transition-colors duration-150 ${
                 isActive 
                   ? 'text-neutral-900 dark:text-neutral-100 font-medium' 
