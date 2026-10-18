@@ -1,14 +1,34 @@
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable, Frame, PageTemplate
+
+class ResumeDocTemplate(SimpleDocTemplate):
+    def build(self, flowables, onFirstPage=None, onLaterPages=None, canvasmaker=None):
+        self._calc()
+        frame = Frame(
+            self.leftMargin,
+            self.bottomMargin,
+            self.width,
+            self.height,
+            id='normal',
+            leftPadding=0,
+            rightPadding=0,
+            topPadding=0,
+            bottomPadding=0
+        )
+        self.addPageTemplates([
+            PageTemplate(id='First', frames=frame, pagesize=self.pagesize),
+            PageTemplate(id='Later', frames=frame, pagesize=self.pagesize)
+        ])
+        super(SimpleDocTemplate, self).build(flowables)
 
 def build_pdf(filename):
     left_margin = 46
     right_margin = 46
     printable_width = 595.28 - (left_margin + right_margin) # 503.28 pt
 
-    doc = SimpleDocTemplate(
+    doc = ResumeDocTemplate(
         filename,
         pagesize=A4,
         leftMargin=left_margin,
@@ -110,7 +130,7 @@ def build_pdf(filename):
     def make_header_row(left_text, right_text):
         lp = Paragraph(left_text, company_style)
         rp = Paragraph(right_text, date_style)
-        t = Table([[lp, rp]], colWidths=[370, printable_width - 370])
+        t = Table([[lp, rp]], colWidths=[370, printable_width - 370], hAlign='LEFT')
         t.setStyle(TableStyle([
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
@@ -123,7 +143,7 @@ def build_pdf(filename):
     def make_bullet(text_html):
         bp = Paragraph("•", bullet_symbol_style)
         tp = Paragraph(text_html, bullet_text_style)
-        t = Table([[bp, tp]], colWidths=[14, printable_width - 14])
+        t = Table([[bp, tp]], colWidths=[14, printable_width - 14], hAlign='LEFT')
         t.setStyle(TableStyle([
             ('VALIGN', (0,0), (-1,-1), 'TOP'),
             ('LEFTPADDING', (0,0), (-1,-1), 0),
@@ -166,7 +186,7 @@ def build_pdf(filename):
 
     role_sub_table = Table([[
         Paragraph("<b>Staff Product Manager</b> (Aug 2026 - Present) &nbsp;&nbsp;|&nbsp;&nbsp; <b>Senior Product Manager</b> (May 2025 - Aug 2026)", body_text_style),
-    ]], colWidths=[printable_width])
+    ]], colWidths=[printable_width], hAlign='LEFT')
     role_sub_table.setStyle(TableStyle([
         ('LEFTPADDING', (0,0), (-1,-1), 0),
         ('RIGHTPADDING', (0,0), (-1,-1), 0),
@@ -177,7 +197,7 @@ def build_pdf(filename):
 
     first_pm_table = Table([[
         Paragraph("First Product Manager in India; sole PM across a ~30-engineer organization", subrole_style)
-    ]], colWidths=[printable_width])
+    ]], colWidths=[printable_width], hAlign='LEFT')
     first_pm_table.setStyle(TableStyle([
         ('LEFTPADDING', (0,0), (-1,-1), 0),
         ('RIGHTPADDING', (0,0), (-1,-1), 0),
@@ -195,7 +215,7 @@ def build_pdf(filename):
     story.append(Spacer(1, 4))
 
     # Kloudfuse
-    story.append(make_header_row(f'<b><a href="https://kloudfuse.com" color="{link_color}">Kloudfuse</a></b> - Product/Growth Lead, India', "Apr 2024 - May 2025"))
+    story.append(make_header_row(f'<b><a href="https://kloudfuse.com" color="{link_color}">Kloudfuse</a></b> - Product Growth Lead, India', "Apr 2024 - May 2025"))
     story.append(Spacer(1, 1))
     story.append(make_bullet("Opened the India market; onboarded 1mg, Innovacer and GE Health."))
     story.append(make_bullet("Led the launch of Real User Monitoring (RUM) and other product updates."))
@@ -205,7 +225,7 @@ def build_pdf(filename):
     # Komma & Dashh
     story.append(make_header_row("<b>Co-Founder / CEO - Komma and Dashh</b>", "Dec 2021 - Feb 2024"))
     story.append(Spacer(1, 1))
-    story.append(make_bullet("<b>Komma (CEO):</b> built collaborative analytics notebooks for data teams after 150+ interviews with data leaders (Twilio, United Airlines); 6 PoC customers, $150K pre-seed; tech acquired by Series A fintech (Mar 2024)."))
+    story.append(make_bullet("<b>Komma (CEO):</b> built collaborative analytics notebooks for data teams after 150+ interviews with data leaders (Twilio, United Airlines); 6 PoC customers, $150K pre-seed."))
     story.append(make_bullet("<b>Dashh:</b> built 1-click checkout for e-commerce; led product, design and GTM; turned down two acquihire offers."))
     story.append(Spacer(1, 4))
 
