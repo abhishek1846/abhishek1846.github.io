@@ -186,9 +186,9 @@ def build_pdf(filename):
     ]))
     story.append(first_pm_table)
 
-    story.append(make_bullet("Lead product for Non-Human Identity (NHI) and AI agent governance, now the company's core strategic focus; all new customer pipeline is built directly around it."))
+    story.append(make_bullet("Lead product for Non-Human Identity (NHI) and AI agent governance, now the company's core strategic focus; primary focus of new pipeline."))
     story.append(make_bullet("Drove $3M in net new PoCs now at advanced procurement stage by repositioning product and customer conversations around NHI and AI governance."))
-    story.append(make_bullet("Built AI agent governance: continuous discovery of agents across Gemini Enterprise, Salesforce Agentforce, AWS Bedrock and Entra/Copilot, mapped to humans on the identity graph with reviews and remediation."))
+    story.append(make_bullet("Led AI agent governance: continuous discovery of agents across Gemini Enterprise, Salesforce Agentforce, AWS Bedrock and Entra/Copilot, mapped to humans on the identity graph with reviews and remediation."))
     story.append(make_bullet("Shaped the Oleria MCP/AI experience: an AI identity security expert that answers customer questions on their actual data by querying the full context graph."))
     story.append(make_bullet("Own NHI discovery, access reviews, Workflow Studio and Integration Studio; expanded the integration catalog from 20 to 200+ applications."))
     story.append(make_bullet("Mentor engineering to think like product engineers and represent Oleria at industry security conferences."))
@@ -225,7 +225,7 @@ def build_pdf(filename):
     # Education and Publications on separate lines
     story.append(Paragraph("EDUCATION AND PUBLICATIONS", section_title_style))
     story.append(hr())
-    story.append(make_header_row("<b>IIT (BHU), Varanasi</b>", "2012 - 2017"))
+    story.append(make_header_row("<b>IIT (BHU), Varanasi</b> - B.Tech + M.Tech in Engineering", "2012 - 2017"))
     story.append(Spacer(1, 3.5))
     story.append(make_header_row(
         f'<b>Co-author, <a href="https://www.dsci.in/resource/content/identity-security-maturity-ai-era" color="{link_color}"><i>Identity Security Maturity in the AI Era</i></a></b>',
