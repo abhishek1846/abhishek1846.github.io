@@ -4,207 +4,51 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const books = [
-  {
-    title: "The Martian",
-    author: "Andy Weir",
-    recommend: true,
-  },
-  {
-    title: "Project Hail Mary",
-    author: "Andy Weir",
-    recommend: true,
-  },
-  {
-    title: "Ask the Dust",
-    author: "John Fante",
-    recommend: true,
-  },
-  {
-    title: "James",
-    author: "Percival Everett",
-    recommend: true,
-  },
-  {
-    title: "Being Mortal",
-    author: "Atul Gawande",
-    recommend: true,
-  },
-  {
-    title: "Godan (गोदान)",
-    author: "Premchand",
-    recommend: true,
-  },
-  {
-    title: "Notes on Complexity",
-    author: "Neil Theise",
-    recommend: true,
-  },
-  {
-    title: "Zero: The Biography of a Dangerous Idea",
-    author: "Charles Seife",
-    recommend: true,
-  },
-  {
-    title: "Ghachar Ghochar",
-    author: "Vivek Shanbhag",
-    recommend: true,
-  },
-  {
-    title: "The Unbearable Lightness of Being",
-    author: "Milan Kundera",
-    recommend: true,
-  },
-  {
-    title: "The Moon and Sixpence",
-    author: "W. Somerset Maugham",
-    recommend: true,
-  },
-  {
-    title: "Pedro Páramo",
-    author: "Juan Rulfo",
-    recommend: true,
-  },
-  {
-    title: "Notes from Underground",
-    author: "Fyodor Dostoyevsky",
-    recommend: true,
-  },
-  {
-    title: "Awara Bheed Ke Khatare",
-    author: "Harishankar Parsai",
-    recommend: false,
-  },
-  {
-    title: "Common Stocks and Common Sense",
-    author: "Edgar Wachenheim, III",
-    recommend: false,
-  },
-  {
-    title: "A Matter of Rats: A Short Biography of Patna",
-    author: "Amitava Kumar",
-    recommend: false,
-  },
-  {
-    title: "What is Life?",
-    author: "Erwin Schrödinger",
-    recommend: false,
-  },
-  {
-    title: "The Remains of the Day",
-    author: "Kazuo Ishiguro",
-    recommend: true,
-  },
-  {
-    title: "Metamorphosis",
-    author: "Franz Kafka",
-    recommend: true,
-  },
-  {
-    title: "Train to Pakistan",
-    author: "Khushwant Singh",
-    recommend: true,
-  },
-  {
-    title: "The Catcher in the Rye",
-    author: "J.D. Salinger",
-    recommend: true,
-  },
-  {
-    title: "The Dragons of Eden",
-    author: "Carl Sagan",
-    recommend: true,
-  },
-  {
-    title: "Animal Farm",
-    author: "George Orwell",
-    recommend: true,
-  },
-  {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    recommend: true,
-  },
-  {
-    title: "The Hitchhiker's Guide to the Galaxy",
-    author: "Douglas Adams",
-    recommend: true,
-  },
-  {
-    title: "The Black Swan",
-    author: "Nassim Nicholas Taleb",
-    recommend: true,
-  },
-  {
-    title: "The Snowball: Warren Buffett and the Business of Life",
-    author: "Alice Schroeder",
-    recommend: true,
-  },
-  {
-    title: "Zero to One",
-    author: "Peter Thiel",
-    recommend: true,
-  },
-  {
-    title: "Invent and Wander: The Collected Writings of Jeff Bezos",
-    author: "Jeff Bezos",
-    recommend: true,
-  },
-  {
-    title: "Elon Musk",
-    author: "Ashlee Vance",
-    recommend: true,
-  },
-  {
-    title: "Half Lion: How P.V. Narasimha Rao Transformed India",
-    author: "Vinay Sitapati",
-    recommend: true,
-  },
-  {
-    title: "So Good They Can't Ignore You",
-    author: "Cal Newport",
-    recommend: true,
-  },
-  {
-    title: "Tuesdays with Morrie",
-    author: "Mitch Albom",
-    recommend: true,
-  },
-  {
-    title: "The Last Lecture",
-    author: "Randy Pausch",
-    recommend: true,
-  },
-  {
-    title: "Emotional Intelligence",
-    author: "Daniel Goleman",
-    recommend: true,
-  },
-  {
-    title: "Think Straight: Change Your Thoughts, Change Your Life",
-    author: "Darius Foroux",
-    recommend: true,
-  },
-  {
-    title: "Lying",
-    author: "Sam Harris",
-    recommend: true,
-  },
-  {
-    title: "How to Win Friends & Influence People",
-    author: "Dale Carnegie",
-    recommend: true,
-  },
-  {
-    title: "Born Standing Up: A Comic's Life",
-    author: "Steve Martin",
-    recommend: true,
-  },
+  { title: "The Martian", author: "Andy Weir" },
+  { title: "Project Hail Mary", author: "Andy Weir" },
+  { title: "Ask the Dust", author: "John Fante" },
+  { title: "James", author: "Percival Everett" },
+  { title: "Being Mortal", author: "Atul Gawande" },
+  { title: "Godan (गोदान)", author: "Premchand" },
+  { title: "Notes on Complexity", author: "Neil Theise" },
+  { title: "Zero: The Biography of a Dangerous Idea", author: "Charles Seife" },
+  { title: "Ghachar Ghochar", author: "Vivek Shanbhag" },
+  { title: "The Unbearable Lightness of Being", author: "Milan Kundera" },
+  { title: "The Moon and Sixpence", author: "W. Somerset Maugham" },
+  { title: "Pedro Páramo", author: "Juan Rulfo" },
+  { title: "Notes from Underground", author: "Fyodor Dostoyevsky" },
+  { title: "Awara Bheed Ke Khatare", author: "Harishankar Parsai" },
+  { title: "Common Stocks and Common Sense", author: "Edgar Wachenheim, III" },
+  { title: "A Matter of Rats: A Short Biography of Patna", author: "Amitava Kumar" },
+  { title: "What is Life?", author: "Erwin Schrödinger" },
+  { title: "The Remains of the Day", author: "Kazuo Ishiguro" },
+  { title: "Metamorphosis", author: "Franz Kafka" },
+  { title: "Train to Pakistan", author: "Khushwant Singh" },
+  { title: "The Catcher in the Rye", author: "J.D. Salinger" },
+  { title: "The Dragons of Eden", author: "Carl Sagan" },
+  { title: "Animal Farm", author: "George Orwell" },
+  { title: "To Kill a Mockingbird", author: "Harper Lee" },
+  { title: "The Hitchhiker's Guide to the Galaxy", author: "Douglas Adams" },
+  { title: "The Black Swan", author: "Nassim Nicholas Taleb" },
+  { title: "The Snowball: Warren Buffett and the Business of Life", author: "Alice Schroeder" },
+  { title: "Zero to One", author: "Peter Thiel" },
+  { title: "Invent and Wander: The Collected Writings of Jeff Bezos", author: "Jeff Bezos" },
+  { title: "Elon Musk", author: "Ashlee Vance" },
+  { title: "Half Lion: How P.V. Narasimha Rao Transformed India", author: "Vinay Sitapati" },
+  { title: "So Good They Can't Ignore You", author: "Cal Newport" },
+  { title: "Tuesdays with Morrie", author: "Mitch Albom" },
+  { title: "The Last Lecture", author: "Randy Pausch" },
+  { title: "Emotional Intelligence", author: "Daniel Goleman" },
+  { title: "Think Straight: Change Your Thoughts, Change Your Life", author: "Darius Foroux" },
+  { title: "Lying", author: "Sam Harris" },
+  { title: "How to Win Friends & Influence People", author: "Dale Carnegie" },
+  { title: "Born Standing Up: A Comic's Life", author: "Steve Martin" },
 ];
 ---
 
 <Layout 
   title="Books & Reading | Abhishek Singh"
-  description="Books read by Abhishek Singh with recommendations."
+  description="Books read by Abhishek Singh from his reading log."
 >
   <Header current="books" />
 
@@ -234,19 +78,10 @@ const books = [
 
       <div class="divide-y divide-neutral-200 dark:divide-neutral-800">
         {books.map((book) => (
-          <div class="py-3 first:pt-0 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+          <div class="py-2.5 first:pt-0 flex items-baseline justify-between gap-2">
             <h3 class="text-sm font-medium text-neutral-900 dark:text-neutral-100">
               {book.title} <span class="text-neutral-400 dark:text-neutral-500 font-normal">by {book.author}</span>
             </h3>
-            <div class="flex items-center gap-2 shrink-0">
-              <span class={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
-                book.recommend 
-                  ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/40' 
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400'
-              }`}>
-                {book.recommend ? 'Recommend' : "Don't recommend"}
-              </span>
-            </div>
           </div>
         ))}
       </div>
