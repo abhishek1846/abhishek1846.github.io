@@ -20,16 +20,35 @@
 }
 
 .dark {
-  --bg-page: #0a0a0a;
-  --bg-card: #121212;
-  --bg-card-subtle: #171717;
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
-  --border-subtle: #262626;
-  --border-hover: #404040;
-  --accent: #3b82f6;
-  --accent-hover: #60a5fa;
+  /* Ghostty Dark Theme (Softer, warm slate charcoal instead of jarring pitch black) */
+  --bg-page: #292c33;
+  --bg-card: #30343d;
+  --bg-card-subtle: #22252c;
+  --text-primary: #e8eaed;
+  --text-secondary: #a3a8b5;
+  --text-muted: #767c8b;
+  --border-subtle: #383c46;
+  --border-hover: #484d59;
+  --accent: #4eacf8;
+  --accent-hover: #72bdfa;
+
+  /* Remap Tailwind neutral scale in dark mode to Ghostty palette */
+  --color-neutral-950: #1c1e23;
+  --color-neutral-900: #23262d;
+  --color-neutral-800: #33363f;
+  --color-neutral-700: #464a56;
+  --color-neutral-600: #5c6270;
+  --color-neutral-500: #7b8190;
+  --color-neutral-400: #a3a8b5;
+  --color-neutral-300: #c5c9d3;
+  --color-neutral-200: #d9dce3;
+  --color-neutral-100: #e8eaed;
+  --color-neutral-50:  #f4f5f7;
+
+  /* Ghostty electric blue accent */
+  --color-blue-400: #4eacf8;
+  --color-blue-500: #3b9eef;
+  --color-blue-600: #2b8edc;
 }
 
 html {
@@ -151,8 +170,8 @@ h1, h2, h3, h4 {
 }
 
 .markdown-content pre {
-  background-color: #16161e !important;
-  color: #c0caf5;
+  background-color: var(--bg-card-subtle) !important;
+  color: var(--text-primary);
   border: 1px solid var(--border-subtle);
   padding: 1.25rem;
   border-radius: 0.5rem;
