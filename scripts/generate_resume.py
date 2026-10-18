@@ -210,7 +210,7 @@ def build_pdf(filename):
     story.append(Spacer(1, 4))
 
     # PharmEasy
-    story.append(make_header_row(f'<b><a href="https://pharmeasy.in" color="{link_color}">PharmEasy</a></b> - Senior Product Manager', "Nov 2018 - Nov 2021"))
+    story.append(make_header_row(f'<b><a href="https://pharmeasy.in" color="{link_color}">PharmEasy</a></b> - Product Manager', "Nov 2018 - Nov 2021"))
     story.append(Spacer(1, 1))
     story.append(make_bullet("Owned the roadmap for Docon, a digital prescription platform acquired by PharmEasy: about 1M prescriptions per month, feeding its e-pharmacy and diagnostics businesses."))
     story.append(make_bullet("Additionally built prescription analytics for pharma companies and doctor-facing analytics dashboards."))
