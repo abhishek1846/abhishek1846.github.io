@@ -1,6 +1,6 @@
 ---
 title: "Running as a way of slowing down"
-description: "Why locking your attention onto pace and distance is the best form of meditation."
+description: "Why running is the simplest way to clear your head."
 pubDate: 2026-10-18T09:00:00.000Z
 ---
 
@@ -10,12 +10,12 @@ You reply to a message, check a dashboard, review a pull request, and wonder wha
 
 When you go for a run, that chaos disappears.
 
-You set a goal before stepping out the door. You have a target pace in mind and a distance you want to finish. Once your feet hit the pavement, that simple goal takes over your entire consciousness. 
+You set a simple goal before stepping out the door. You have a route in mind and a distance you want to finish. Once your feet hit the pavement, that simple rhythm takes over. 
 
-Your mind narrows down to two things: the speed you are holding and the distance left ahead of you. 
+Your mind narrows down to the road right in front of you. 
 
-There is no room left for anything else. You cannot worry about tomorrow's roadmap while your lungs and legs are working to hold a specific pace. You cannot ruminate on an awkward conversation from three days ago. If your attention drifts, your pace drops, and your body immediately pulls you back to the present moment.
+There is little room left for mental chatter. You cannot worry about tomorrow's roadmap while your body is working to keep moving forward. You cannot ruminate on an awkward conversation from three days ago. If your attention drifts, your body immediately pulls you back to the physical effort.
 
-People often talk about meditation as sitting still in a quiet room, trying to empty your thoughts. That has never worked well for me.
+Like reading, running is not a competition. It does not matter how fast you go, how far you run, or how your pace compares to anyone else. Some days you run to push yourself, and other days you run just to get outside and break up the day. 
 
-Running does it naturally. It forces a singular focus by demanding your physical effort. By the time you finish your kilometers, the mental noise has evaporated. You didn't force your mind to slow down. The rhythm of the run did it for you.
+People often talk about meditation as sitting still in a quiet room, trying to empty your thoughts. That has never worked well for me. Running does it naturally. By the time you finish, the mental noise has evaporated. The rhythm of the run did it for you.

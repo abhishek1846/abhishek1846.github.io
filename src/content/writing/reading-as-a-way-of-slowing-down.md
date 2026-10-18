@@ -1,6 +1,6 @@
 ---
 title: "Reading as a way of slowing down"
-description: "Why reading books is the best antidote to algorithmic acceleration."
+description: "Why reading books is a personal practice, not a competition."
 pubDate: 2026-10-18T10:00:00.000Z
 ---
 
@@ -10,10 +10,12 @@ Feeds refresh in milliseconds. Videos play at 1.5x speed by default. When an art
 
 Reading a book does the exact opposite.
 
-You cannot speed up a good paragraph without losing the texture of the prose. If you try to skim *A Fine Balance* or *The Myth of Sisyphus*, you end up with facts, but you miss the point entirely. The point is not the plot points or the conclusion. The point is the patience required to sit with another human mind for three hundred pages.
+You cannot rush through a good book without losing the substance. If you try to skim, you end up with a rough summary, but you miss the real value. The value is the patience required to sit with another person's thoughts and follow an argument or a story at its own pace.
 
-When I sit down with an e-ink reader, my phone is in another room. There are no notifications, no browser tabs, and no hyperlinks pulling me in five directions at once. My brain rebels for the first ten minutes. It expects a hit of cheap stimulation every thirty seconds.
+When I sit down with a book, my phone is in another room. There are no notifications, no browser tabs, and no hyperlinks pulling me in five directions at once. My brain rebels for the first ten minutes. It expects a hit of cheap stimulation every thirty seconds.
 
-Then something shifts. The mental noise quiets down. My breathing slows down. 
+Then something shifts. The mental noise quiets down. 
 
-In a world obsessed with doing more in less time, reading is one of the few quiet rebellions left. It is not a productivity hack. It is simply proof that some of the best things in life take time.
+People often treat reading like a contest. They track page counts, set annual goals, or debate whether reading fiction is better than reading non-fiction. None of that really matters. 
+
+Read for whatever reason you want to read. You can read to learn, you can read to be productive, or you can read purely for fun. The reason is different for everyone, and it is never a competition. The real value of a book is simply giving yourself permission to slow down.
