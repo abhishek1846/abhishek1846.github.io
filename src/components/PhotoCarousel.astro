@@ -45,18 +45,18 @@ const slides = [
 ---
 
 <div class="space-y-3">
-  <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900">
-    <div class="flex items-center gap-2">
+  <div class="flex items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-900 gap-2">
+    <div class="flex items-center gap-2 min-w-0">
       <h2 class="text-xs uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400">
         Publications, Conferences & Meetups
       </h2>
-      <span class="text-[11px] font-mono text-neutral-400">
+      <span class="text-[11px] font-mono text-neutral-400 shrink-0">
         (<span id="carousel-current">1</span>/{slides.length})
       </span>
     </div>
 
     <!-- Manual Carousel Controls (Click-driven only) -->
-    <div class="flex items-center gap-1.5">
+    <div class="flex items-center gap-1.5 shrink-0">
       <button 
         id="carousel-prev" 
         aria-label="Previous slide"

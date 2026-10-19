@@ -14,31 +14,48 @@ const navLinks = [
 ];
 ---
 
-<header class="pt-2 pb-8 mb-12 border-b border-neutral-100 dark:border-neutral-900 transition-colors">
-  <div class="flex items-center justify-between">
-    <!-- Clean, tasteful name -->
-    <a 
-      href="/" 
-      data-astro-prefetch="hover"
-      class={`text-base font-medium tracking-tight transition-colors ${
-        current === 'home' || current === ''
-          ? 'text-neutral-900 dark:text-neutral-100'
-          : 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'
-      }`}
-    >
-      Abhishek Singh
-    </a>
+<header class="pt-2 pb-6 sm:pb-8 mb-8 sm:mb-12 border-b border-neutral-100 dark:border-neutral-900 transition-colors">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3.5 sm:gap-0">
+    <!-- Top row on mobile: Name on left, theme toggle on right -->
+    <div class="flex items-center justify-between w-full sm:w-auto">
+      <a 
+        href="/" 
+        data-astro-prefetch="hover"
+        class={`text-base font-medium tracking-tight whitespace-nowrap transition-colors ${
+          current === 'home' || current === ''
+            ? 'text-neutral-900 dark:text-neutral-100'
+            : 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'
+        }`}
+      >
+        Abhishek Singh
+      </a>
 
-    <!-- Clean, uncluttered navigation links (writing, projects, books, uses, about) -->
-    <div class="flex items-center space-x-5 sm:space-x-7 text-sm">
-      <nav class="flex items-center space-x-5 sm:space-x-7">
+      <!-- Mobile Theme Toggle -->
+      <button 
+        id="theme-toggle-mobile"
+        aria-label="Toggle Theme"
+        onclick="window.toggleTheme()"
+        class="sm:hidden text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100 transition-colors p-1.5 -mr-1.5"
+      >
+        <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation links (second row on mobile, right side on desktop) -->
+    <div class="flex items-center space-x-0 sm:space-x-7 text-sm">
+      <nav class="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-4 sm:gap-7 overflow-x-auto py-0.5">
         {navLinks.map((link) => {
           const isActive = current === link.name;
           return (
             <a 
               href={link.href}
               data-astro-prefetch="hover"
-              class={`transition-colors duration-150 ${
+              class={`whitespace-nowrap transition-colors duration-150 ${
                 isActive 
                   ? 'text-neutral-900 dark:text-neutral-100 font-medium' 
                   : 'text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100'
@@ -50,14 +67,14 @@ const navLinks = [
         })}
       </nav>
 
-      <div class="h-3.5 w-px bg-neutral-200 dark:bg-neutral-800"></div>
+      <div class="hidden sm:block h-3.5 w-px bg-neutral-200 dark:bg-neutral-800"></div>
 
-      <!-- Subtle Theme Toggle -->
+      <!-- Desktop Theme Toggle -->
       <button 
         id="theme-toggle"
         aria-label="Toggle Theme"
         onclick="window.toggleTheme()"
-        class="text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100 transition-colors p-1"
+        class="hidden sm:block text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100 transition-colors p-1"
       >
         <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
