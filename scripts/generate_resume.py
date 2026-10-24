@@ -219,7 +219,7 @@ def build_pdf(filename):
     story.append(Spacer(1, 1))
     story.append(make_bullet("Opened the India market; onboarded 1mg, Innovaccer and GE Health."))
     story.append(make_bullet("Led the launch of Real User Monitoring (RUM) and other product updates."))
-    story.append(make_bullet("Grew the India team from 3 to 8 in 2024."))
+    story.append(make_bullet("Grew the India team from 3 to 8 across 2024-2025."))
     story.append(Spacer(1, 4))
 
     # Komma & Dashh
