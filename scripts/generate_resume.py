@@ -169,7 +169,7 @@ def build_pdf(filename):
     story.append(Paragraph("SUMMARY", section_title_style))
     story.append(hr())
     story.append(Paragraph(
-        "Staff PM with 9 years across analytics, healthcare data and enterprise security. "
+        "Staff PM with ~10 years across analytics, healthcare data and enterprise security. "
         "Leads product for Non-Human Identity (NHI) and AI agent governance at Oleria, "
         "setting direction across three engineering teams and partnering with Fortune 500 enterprise customers. "
         "Two-time founder.",
@@ -217,7 +217,7 @@ def build_pdf(filename):
     # Kloudfuse
     story.append(make_header_row(f'<b><a href="https://kloudfuse.com" color="{link_color}">Kloudfuse</a></b> - Product Growth Lead, India', "Apr 2024 - May 2025"))
     story.append(Spacer(1, 1))
-    story.append(make_bullet("Opened the India market; onboarded 1mg, Innovacer and GE Health."))
+    story.append(make_bullet("Opened the India market; onboarded 1mg, Innovaccer and GE Health."))
     story.append(make_bullet("Led the launch of Real User Monitoring (RUM) and other product updates."))
     story.append(make_bullet("Grew the India team from 3 to 8 in 2024."))
     story.append(Spacer(1, 4))
@@ -225,7 +225,7 @@ def build_pdf(filename):
     # Komma & Dashh
     story.append(make_header_row("<b>Co-Founder / CEO - Komma and Dashh</b>", "Dec 2021 - Feb 2024"))
     story.append(Spacer(1, 1))
-    story.append(make_bullet("<b>Komma (CEO):</b> built collaborative analytics notebooks for data teams after 150+ interviews with data leaders (Twilio, United Airlines); 6 PoC customers, $150K pre-seed."))
+    story.append(make_bullet("<b>Komma:</b> built collaborative analytics notebooks for data teams after 150+ interviews with data leaders (Twilio, United Airlines); 6 PoC customers, $150K pre-seed."))
     story.append(make_bullet("<b>Dashh:</b> built 1-click checkout for e-commerce; led product, design and GTM; turned down two acquihire offers."))
     story.append(Spacer(1, 4))
 
