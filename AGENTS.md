@@ -28,3 +28,9 @@ Consult these guides before working on related tasks:
 - Never use 3-word phrase triplets or cliché copywriting triads.
 - Write naturally like a human.
 - Proactively suggest better approaches and push back when a design or technical decision is sub-optimal.
+
+## Blog drafts
+
+- Keep new blog drafts in `src/content/writing/` with `draft: true` and the required frontmatter. They must appear on the local dev server for review, including the writing list and article pages. Do not put blog drafts in the shared Obsidian Agent Workspace or a separate drafts directory.
+- Include drafts during development only. Exclude them from production listings and generated article routes.
+- Review and edit locally with Abhishek. Once approved, mark ready for publication and commit and push to main as authorized.

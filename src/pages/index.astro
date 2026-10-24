@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import PhotoCarousel from '../components/PhotoCarousel.astro';
+import Highlights from '../components/Highlights.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('writing'))
-  .filter((post) => !post.data.draft)
+  .filter((post) => import.meta.env.DEV || !post.data.draft)
   .sort((a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0))
   .slice(0, 2);
 ---
@@ -21,13 +21,13 @@ const posts = (await getCollection('writing'))
         Abhishek Singh
       </h1>
       <p class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-        Staff Product Manager at <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white">Oleria</a> leading product for Non-Human Identity (NHI) and AI Agent Governance. Two-time founder (<a href="/about" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white">Komma</a>, Dashh). Based in Bengaluru.
+        Staff Product Manager at <a href="https://oleria.com" target="_blank" rel="noopener noreferrer" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white">Oleria</a> leading product for Non-Human Identity (NHI) and AI Agent Governance. Two-time <a href="/about" class="text-neutral-900 dark:text-neutral-100 underline decoration-neutral-300 dark:decoration-neutral-700 hover:decoration-black dark:hover:decoration-white">founder</a> (Komma, Dashh). Based in Bengaluru.
       </p>
     </section>
 
-    <!-- Photo, Paper & Talks Carousel -->
+    <!-- Publications and community highlights -->
     <section>
-      <PhotoCarousel />
+      <Highlights />
     </section>
 
     <!-- Recent Writing (Simple, calm text list without heavy card boxes) -->
@@ -68,14 +68,14 @@ const posts = (await getCollection('writing'))
       </div>
 
       <div class="text-sm text-neutral-600 dark:text-neutral-400 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-        <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1 min-w-0">
           <a 
             href="/projects" 
             class="font-medium text-neutral-900 dark:text-neutral-100 underline decoration-neutral-200 dark:decoration-neutral-800 hover:decoration-black dark:hover:decoration-white"
           >
             Gatsby
           </a>
-          <span>- Minimalist macOS e-book manager & Kindle companion</span>
+          <span>- A small macOS ebook manager and Kindle companion</span>
         </div>
         <a 
           href="https://github.com/abhishek1846/gatsby-releases/releases" 

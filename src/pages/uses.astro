@@ -46,12 +46,10 @@ const categories = [
     items: [
       {
         name: "Gatsby",
-        url: "/projects",
         description: "My native macOS e-book manager built with Rust and Tauri. Fast and focused on the basics.",
       },
       {
         name: "Zed",
-        url: "https://zed.dev",
         description: "Lightweight code editor written in Rust. Fast startup and clean design.",
       },
       {
@@ -61,12 +59,10 @@ const categories = [
       },
       {
         name: "Ghostty",
-        url: "https://ghostty.org",
         description: "Native terminal emulator with GPU acceleration.",
       },
       {
         name: "Raycast",
-        url: "https://raycast.com",
         description: "Replaces Spotlight for window management and quick shortcuts.",
       },
       {
@@ -81,18 +77,10 @@ const categories = [
       },
       {
         name: "Firefox & Safari",
-        links: [
-          { name: "Firefox", url: "https://www.mozilla.org/firefox/" },
-          { name: "Safari", url: "https://www.apple.com/safari/" },
-        ],
         description: "Firefox as my primary everyday browser; Safari as my fast secondary browser.",
       },
       {
         name: "Apple Music & YouTube Music",
-        links: [
-          { name: "Apple Music", url: "https://music.apple.com" },
-          { name: "YouTube Music", url: "https://music.youtube.com" },
-        ],
         description: "Apple Music for curated listening. YouTube Music for casual listening so it does not affect recommendations on Apple Music.",
       },
     ],
@@ -145,20 +133,7 @@ const categories = [
                     )}
                   </h3>
 
-                  {item.links && (
-                    <div class="flex items-center gap-3 text-xs">
-                      {item.links.map((link: { name: string; url: string }) => (
-                        <a 
-                          href={link.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 underline underline-offset-2"
-                        >
-                          {link.name} ↗
-                        </a>
-                      ))}
-                    </div>
-                  )}
+
                 </div>
                 <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1 leading-relaxed">
                   {item.description}
